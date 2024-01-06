@@ -6,4 +6,4 @@ type User = {
   refreshToken: string;
 };
 
-export { User}
+export { User };
