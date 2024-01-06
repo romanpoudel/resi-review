@@ -55,8 +55,8 @@ export const refreshAccessToken = asyncHandler(
             "Access token refreshed"
           )
         );
-    } catch (error: any) {
-      throw new ApiError(401, error?.message || "Invalid refresh token");
+    } catch (error: unknown) {
+      throw new ApiError(401, (error as Error)?.message || "Invalid refresh token");
     }
   }
 );

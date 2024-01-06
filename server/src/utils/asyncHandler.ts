@@ -7,10 +7,8 @@ type AsyncRequestHandler = (
   next: NextFunction
 ) => Promise<void>;
 
-
-const asyncHandler =
-  (fn: AsyncRequestHandler) =>
-  async (req: Request, res: Response, next: NextFunction) => {
+const asyncHandler = (fn: AsyncRequestHandler) => {
+  return async (req: Request, res: Response, next: NextFunction) => {
     try {
       await fn(req, res, next);
     } catch (error) {
@@ -21,5 +19,6 @@ const asyncHandler =
       });
     }
   };
+};
 
 export default asyncHandler;

@@ -4,6 +4,6 @@ import { User } from "../types/user";
 import { Request } from "express";
 
 export interface RequestWithUser
-  extends Request<ParamsDictionary, any, any, ParsedQs> {
+  extends Request<ParamsDictionary, unknown, unknown, ParsedQs> {
   user?: User;
 }
