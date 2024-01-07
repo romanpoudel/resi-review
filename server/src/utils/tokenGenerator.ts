@@ -4,7 +4,7 @@ import { User } from "../types/user";
 import asyncHandler from "./asyncHandler";
 import { Request, Response } from "express";
 import { ApiError } from "./ApiError";
-import { getUserById } from "../models/user.model";
+import  UserModel from "../models/user.model";
 import { ApiResponse } from "./ApiResponse";
 import { options } from "./cookieOption";
 
@@ -13,7 +13,7 @@ const generateAccessAndRefreshToken = (user: User) => {
     expiresIn: config.jwt.accessTokenExpiresIn,
   });
   const refreshToken = jwt.sign(
-    { id: user.id },
+    { username: user.username },
     config.jwt.refreshTokenSecret!,
     {
       expiresIn: config.jwt.refreshTokenExpiresIn,
@@ -34,7 +34,11 @@ export const refreshAccessToken = asyncHandler(
         incomingRefreshToken,
         config.jwt.refreshTokenSecret!
       ) as jwt.JwtPayload;
-      const user = getUserById(decodedToken.id);
+      
+      if (!decodedToken || !decodedToken.exp) {
+        throw new ApiError(401, "Refresh token has expired");
+      }
+      const user =await UserModel.getByUsername(decodedToken.username);
       if (!user) {
         throw new ApiError(401, "Invalid refresh token");
       }

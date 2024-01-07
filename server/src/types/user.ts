@@ -1,9 +1,11 @@
 type User = {
-  id: number;
+  user_id?: number;
   username: string;
   email: string;
   password: string;
-  refreshToken: string;
+  refreshToken?: string;
+  role?: string;
+  image_url?: string;
 };
 
 export { User };

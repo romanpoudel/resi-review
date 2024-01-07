@@ -1,39 +1,43 @@
+import knex from "knex";
+// import db from "../db";
 import { User } from "../types/user";
+import db from "../db";
+import { ApiError } from "../utils/ApiError";
 
-const users: User[] = [
-  {
-    id: 1,
-    username: "rohan",
-    email: "rohan@gmail.com",
-    password: "123456",
-    refreshToken: "",
-  },
-  {
-    id: 2,
-    username: "roshan",
-    email: "roshan@gmail.com",
-    password: "123456",
-    refreshToken: "",
-  },
-  {
-    id: 3,
-    username: "sita",
-    email: "sita@gmail.com",
-    password: "123456",
-    refreshToken: "",
-  },
-];
+export default class UserModel {
+  static async getAllUsers() {
+    return knex("users").select("username", "email", "role", "image_url");
+  }
 
-export const getUsers = () => {
-  return users;
-};
+  static async addUser(user: User) {
+    try {
+      console.log("Instering user");
+      const result =await db("users").insert(user);
+      console.log("Insert result", result);
+      return result;
+    } catch (err) {
+      console.log(err);
+      throw new ApiError(400,"Database error. Please check your input and try again");
+    }
+  }
 
-export const addUser = (user: User) => {
-  users.push(user);
-};
+  static async getByEmail(email: string) {
+    return db("users").where({ email }).first();
+  }
 
-export const getUserById = (id: number) => {
-  const user = users.find(({ id: userId }) => userId === id);
+  static async getByUsername(username: string) {
+    return db("users").where({ username }).first();
+  }
 
-  return user;
-};
+  static async updateUser(username: string, user: User) {
+    return db("users").where({ username }).update(user);
+  }
+
+  static async deleteUser(username: string) {
+    return db("users").where({ username }).del();
+  }
+
+  static async clearRefreshToken(username: string) {
+    return db("users").where({ username }).update({ refreshToken: null });
+  }
+}
