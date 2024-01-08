@@ -4,6 +4,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-top: a.rem(30);
 	&__logo {
 		display: flex;
 		align-items: center;
@@ -15,6 +16,7 @@
 			background-color: a.$clr-primary;
 			color: a.$clr-primary-ultra-light;
 			border-radius: a.rem(10);
+			padding: a.rem(5) a.rem(10);
 			font-size: a.$text-2xl;
 			width: a.rem(35);
 			height: a.rem(35);
@@ -23,6 +25,7 @@
 			color: a.$clr-primary;
 			font-size: a.$text-xl;
 			font-weight: a.$font-extrabold;
+			white-space: nowrap;
 		}
 	}
 }

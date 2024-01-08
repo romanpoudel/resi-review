@@ -1,0 +1,26 @@
+@use "../abstracts" as a;
+
+.hero-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: a.rem(30);
+		&__title {
+			color: a.$clr-black;
+			font-family: "Open Sans", sans-serif;
+			text-align: center;
+			margin-bottom: a.rem(2);
+			@include a.breakpoint(medium) {
+				margin-bottom: a.rem(4);
+			}
+			@include a.breakpoint(large) {
+				margin-bottom: a.rem(6);
+			}
+		}
+		&__desc {
+			color: a.$clr-gray;
+			font-weight: a.$font-medium;
+			margin-bottom: a.rem(20);
+		}
+}

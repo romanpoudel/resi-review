@@ -1,28 +1,50 @@
 @use "../abstracts" as a;
 
-.search-container {
-	padding-top: a.rem(8);
-	padding-bottom: a.rem(8);
+.search-section{
+	width: 80%;
+	margin-inline: auto;
+	margin-top: a.rem(20);
 	position: relative;
-}
-
-.search {
-	&__input {
-		box-shadow: 0 a.rem(1) a.rem(2) rgba(0, 0, 0, 0.25);
-		min-height: a.rem(60);
-		border-radius: a.rem(3);
-		padding: 0 a.rem(40) 0 a.rem(15);
-		border: a.rem(2) solid transparent;
-		width: 100%;
+	display: flex;
+	align-items: center;
+	@include a.breakpoint(medium) {
+		margin-top: a.rem(50);
 	}
-	&__icon {
+	&__location{
 		position: absolute;
 		top: 50%;
-		right: a.rem(10);
+		left: a.rem(15);
 		transform: translateY(-50%);
-		color: #038e43;
-		font-size: a.rem(24);
+	
+	}
+	&__input {
+		padding: a.rem(15) a.rem(60) a.rem(15) a.rem(45);
+		border-radius: a.rem(6);
+		width:100%;
+		background-color: #fff;
+		border: none;
+		
+		font-weight: a.$font-medium;
+		font-family: "Lato", sans-serif;
+		&:focus {
+			outline: none;
+		}
+		@include a.breakpoint(medium) {
+			padding: a.rem(20) a.rem(60) a.rem(20) a.rem(45);
+			font-size: a.$text-lg;
+		}
+	}
+	&__search{
+		position: absolute;
+		display: grid;
+		place-items: center;
+		right: 0;
+		font-size: a.$text-base;
+		background-color: a.$clr-primary;
+		color: a.$clr-primary-ultra-light;
+		border-radius:  0  a.rem(6) a.rem(6) 0;
+		height: 100%;
+		width: a.rem(60);
 		cursor: pointer;
-		padding-right: a.rem(10);
 	}
 }

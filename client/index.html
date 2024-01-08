@@ -13,16 +13,26 @@
 		<title>Resi-Review</title>
 	</head>
 	<body>
-    <header class="header">
-      <logo-component></logo-component>
+		<header class="container header">
+			<logo-component></logo-component>
 			<div class="header__right">
 				<a class="btn btn--link" href="/login">Login</a>
 				<a class="btn btn--outline" href="/register">Signup</a>
 			</div>
-    </header>
-		<main id="app">
+		</header>
+		<main id="app" class="container">
+			<div class="hero-section">
+				<h1 class="hero-section__title">Real Reviews. Real Houses.</h1>
+				<p class="hero-section__desc">Read and leave reviews.</p>
+			</div>
+			<search-component></search-component>
+			<div>
+				<div></div>
+				<div></div>
+			</div>
 		</main>
 		<script type="module" src="/src/main.ts"></script>
-		<script defer  src="/src/components/Logo.ts"></script>
+		<script defer src="/src/components/Logo.ts"></script>
+		<script defer src="/src/components/Search.ts"></script>
 	</body>
 </html>

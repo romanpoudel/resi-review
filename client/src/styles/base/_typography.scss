@@ -1,6 +1,6 @@
 @use "../abstracts" as a;
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@400;600;800&display=swap");
 
 body {
 	font-family: "Lato", sans-serif,"Open Sans", sans-serif;
@@ -14,7 +14,7 @@ h1 {
 p {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: a.$text-sm;
+	font-size: a.$text-xs;
 }
 
 @include a.breakpoint(medium) {
@@ -22,10 +22,10 @@ p {
 		font-size: a.$text-lg;
 	}
 	h1 {
-		font-size: a.$text-3xl;
+		font-size: a.$text-4xl;
 	}
 	p {
-		font-size: a.$text-base;
+		font-size: a.$text-sm;
 	}
 }
 
@@ -34,9 +34,9 @@ p {
 		font-size: a.$text-xl;
 	}
 	h1 {
-		font-size: a.$text-4xl;
+		font-size: a.$text-5xl;
 	}
 	p {
-		font-size: a.$text-lg;
+		font-size: a.$text-base;
 	}
 }
