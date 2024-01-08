@@ -10,22 +10,22 @@
 .btn-add {
 	color: #fff;
 	cursor: pointer;
-	color: a.$primaryColor;
+	color: a.$clr-primary;
 	font-size: a.rem(24);
 }
 
 .btn-add:hover {
-	color: darken(a.$primaryColor, 5%);
+	color: darken(a.$clr-primary, 5%);
 }
 
 .btn-add:active {
-	color: a.$primaryColor;
+	color: a.$clr-primary;
 }
 
 .deleteIcon {
 	position: absolute;
 	right: a.rem(10);
-	color: a.$primaryColor;
+	color: a.$clr-primary;
 	font-size: a.rem(25);
 	cursor: pointer;
 }

@@ -1,9 +1,24 @@
 @use "./functions" as f;
 
 // colors
-$primaryColor: hsl(148, 96%, 28%);
+$clr-primary-dark: hsl(220, 81%, 33%);
+$clr-primary: hsl(235, 80%, 58%);
+$clr-primary-light: hsl(220, 83%, 77%);
+$clr-primary-ultra-light: hsl(218, 73%, 97%);
+$clr-rosa: hsl(0, 100%, 92%);
 
 $breakpoints-up: (
 	"medium": f.rem(640),
 	"large": f.rem(1024),
 );
+
+// font-size
+$text-xs: f.rem(12);
+$text-sm: f.rem(14);
+$text-base: f.rem(16);
+$text-lg: f.rem(18);
+$text-xl: f.rem(20);
+$text-2xl: f.rem(24);
+$text-3xl: f.rem(30);
+$text-4xl: f.rem(36);
+$text-5xl: f.rem(48);

@@ -1,13 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+@use "../abstracts" as a;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap");
 
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: "Lato", sans-serif,"Open Sans", sans-serif;
+	font-size: a.$text-base;
 }
 h1 {
 	margin-top: 0;
 	margin-bottom: 0;
+	font-size: a.$text-2xl;
 }
 p {
 	margin-top: 0;
 	margin-bottom: 0;
+	font-size: a.$text-sm;
+}
+
+@include a.breakpoint(medium) {
+	body {
+		font-size: a.$text-lg;
+	}
+	h1 {
+		font-size: a.$text-3xl;
+	}
+	p {
+		font-size: a.$text-base;
+	}
+}
+
+@include a.breakpoint(large) {
+	body {
+		font-size: a.$text-xl;
+	}
+	h1 {
+		font-size: a.$text-4xl;
+	}
+	p {
+		font-size: a.$text-lg;
+	}
 }

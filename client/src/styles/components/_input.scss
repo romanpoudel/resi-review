@@ -9,7 +9,7 @@
 }
 
 .input:focus {
-	outline: max(2px, 0.15em) solid a.$primaryColor;
+	outline: max(2px, 0.15em) solid a.$clr-primary;
 	outline-offset: max(2px, 0.15em);
 }
 
@@ -29,8 +29,8 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-	background-color: a.$primaryColor;
-	border-color: a.$primaryColor;
+	background-color: a.$clr-primary;
+	border-color: a.$clr-primary;
 }
 
 /* Create a checkmark using the ::before pseudo-element */
