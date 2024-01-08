@@ -1,0 +1,44 @@
+@use "../abstracts" as a;
+
+.reviews {
+  margin-top: a.rem(30);
+  @include a.breakpoint(medium) {
+    margin-top: a.rem(40);
+  }
+  @include a.breakpoint(large) {
+    margin-top: a.rem(50);
+  }
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
+		&--title {
+      font-size: a.$text-lg;
+		}
+		&--sort {
+      font-size: a.$text-sm;
+      font-weight: a.$font-semibold;
+		}
+	}
+  &__bottom{
+    margin-top: a.rem(20);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    flex-wrap: wrap;
+    gap: a.rem(20);
+    @include a.breakpoint(small) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: auto;
+    }
+    @include a.breakpoint(midsize) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: auto;
+    }
+    @include a.breakpoint(extra-large) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: a.rem(20);
+    }
+  }
+}

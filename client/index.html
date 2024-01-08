@@ -26,13 +26,32 @@
 				<p class="hero-section__desc">Read and leave reviews.</p>
 			</div>
 			<search-component></search-component>
-			<div>
-				<div></div>
-				<div></div>
+			<div class="reviews">
+				<div class="reviews__top">
+					<h2 class="reviews__top--title">Reviews</h2>
+					<select
+						class="reviews__top--sort dropdown"
+						id="category"
+						title="category"
+					>
+						<option value="" disabled selected>Sort by</option>
+						<option value="rent">Rent</option>
+						<option value="buy">Buy</option>
+					</select>
+				</div>
+				<div class="reviews__bottom">
+					<card-component></card-component>
+					<card-component></card-component>
+					<card-component></card-component>
+					<card-component></card-component>
+					<card-component></card-component>
+					<card-component></card-component>
+				</div>
 			</div>
 		</main>
 		<script type="module" src="/src/main.ts"></script>
 		<script defer src="/src/components/Logo.ts"></script>
 		<script defer src="/src/components/Search.ts"></script>
+		<script defer src="/src/components/Card.ts"></script>
 	</body>
 </html>

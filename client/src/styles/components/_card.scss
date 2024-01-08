@@ -1,0 +1,73 @@
+@use "../abstracts" as a;
+
+.card {
+	display: flex;
+	flex-direction: column;
+	border-radius: a.rem(8);
+	background-color: #fff;
+	max-width: a.rem(250);
+	@include a.breakpoint(medium) {
+		max-width: a.rem(300);
+	}
+	@include a.breakpoint(midsize) {
+		max-width: a.rem(350);
+	}
+	@include a.breakpoint(extra-large) {
+		max-width: a.rem(370);
+	}
+	&__image {
+		margin: 0;
+		padding: 0;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: a.rem(8);
+		}
+	}
+	&__desc {
+		display: flex;
+		flex-direction: column;
+		padding-inline: a.rem(15);
+		padding-bottom: a.rem(15);
+		&--title {
+			font-size: a.$text-base;
+			font-weight: a.$font-semibold;
+			margin-top: a.rem(5);
+			color: a.$clr-gray;
+		}
+		&--info {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&--rating {
+			display: flex;
+			align-items: center;
+		}
+		&--star {
+			color: a.$clr-warning;
+		}
+		&--rating-value {
+			margin-left: a.rem(5);
+			font-size: a.$text-sm;
+			font-weight: a.$font-semibold;
+		}
+		&--reviews {
+			margin-left: a.rem(5);
+			font-size: a.$text-sm;
+			font-weight: a.$font-semibold;
+      color: a.$clr-light-gray;
+      white-space: nowrap;
+		}
+		&--price {
+			font-size: a.$text-sm;
+			font-weight: a.$font-semibold;
+      font-family: "Open Sans", sans-serif;
+			margin-top: a.rem(5);
+      @include a.breakpoint(large) {
+        font-size: a.$text-base;
+      }
+		}
+	}
+}

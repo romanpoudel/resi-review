@@ -1,0 +1,9 @@
+@use "../abstracts" as a;
+
+.reviews__top--sort {
+	border: none;
+	background-color: a.$clr-primary-ultra-light;
+  &:focus {
+    outline: none;
+  }
+}
