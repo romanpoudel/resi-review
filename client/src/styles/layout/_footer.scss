@@ -1,0 +1,24 @@
+@use "../abstracts" as a;
+
+.footer{
+  border-top: a.rem(2) solid a.$clr-light-gray;
+  margin-top: a.rem(30);
+  padding: a.rem(15) 0;
+  color: a.$clr-gray;
+}
+
+.footer-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: a.rem(8);
+  @include a.breakpoint(medium) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: a.rem(10);
+  }
+  a{
+    color: inherit;
+  }
+}

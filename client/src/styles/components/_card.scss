@@ -28,18 +28,21 @@
 	&__desc {
 		display: flex;
 		flex-direction: column;
-		padding-inline: a.rem(15);
-		padding-bottom: a.rem(15);
 		&--title {
 			font-size: a.$text-base;
 			font-weight: a.$font-semibold;
 			margin-top: a.rem(5);
 			color: a.$clr-gray;
+			padding-inline: a.rem(15);
 		}
 		&--info {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			border-top: a.rem(1) solid a.$clr-light-gray;
+      padding-top: a.rem(10);
+			padding-inline: a.rem(15);
+			padding-bottom: a.rem(15);
 		}
 		&--rating {
 			display: flex;
@@ -57,17 +60,17 @@
 			margin-left: a.rem(5);
 			font-size: a.$text-sm;
 			font-weight: a.$font-semibold;
-      color: a.$clr-light-gray;
-      white-space: nowrap;
+			color: a.$clr-light-gray;
+			white-space: nowrap;
 		}
 		&--price {
 			font-size: a.$text-sm;
 			font-weight: a.$font-semibold;
-      font-family: "Open Sans", sans-serif;
+			font-family: "Open Sans", sans-serif;
 			margin-top: a.rem(5);
-      @include a.breakpoint(large) {
-        font-size: a.$text-base;
-      }
+			@include a.breakpoint(large) {
+				font-size: a.$text-base;
+			}
 		}
 	}
 }
