@@ -1,4 +1,8 @@
-@use "abstracts";
+@use "abstracts" as a;
 @use "base";
 @use "components";
 @use "layout";
+
+body {
+  background-color: a.$clr-primary-ultra-light;
+}

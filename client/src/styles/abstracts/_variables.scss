@@ -6,6 +6,11 @@ $clr-primary: hsl(235, 80%, 58%);
 $clr-primary-light: hsl(220, 83%, 77%);
 $clr-primary-ultra-light: hsl(218, 73%, 97%);
 $clr-rosa: hsl(0, 100%, 92%);
+$clr-danger: hsl(0, 100%, 50%);
+$clr-success: hsl(120, 100%, 25%);
+$clr-warning: hsl(45, 100%, 50%);
+$clr-info: hsl(180, 100%, 25%);
+$clr-black:hsl(0, 0%, 0%);
 
 $breakpoints-up: (
 	"medium": f.rem(640),
@@ -22,3 +27,14 @@ $text-2xl: f.rem(24);
 $text-3xl: f.rem(30);
 $text-4xl: f.rem(36);
 $text-5xl: f.rem(48);
+
+//font-weight
+$font-thin: 100;
+$font-extralight: 200;
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+$font-black: 900;

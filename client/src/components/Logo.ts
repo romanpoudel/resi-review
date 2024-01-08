@@ -4,7 +4,7 @@ class Logo extends HTMLElement {
 		this.innerHTML = `
     <div class="header__logo">
     <i class="bi bi-house-fill header__logo--icon"></i>
-    <h1 class="header__logo--text">Resi-Review</h1>
+    <span class="header__logo--text">Resi-Review</span>
     </div>
   `;
 	}

@@ -1,31 +1,132 @@
 @use "../abstracts" as a;
 
 .btn {
-	min-height: a.rem(48);
-	padding: a.rem(8) a.rem(16);
-	background: #ddd;
-	border-radius: a.rem(4);
-	border: a.rem(1) solid #999;
-}
-.btn-add {
-	color: #fff;
-	cursor: pointer;
-	color: a.$clr-primary;
-	font-size: a.rem(24);
-}
-
-.btn-add:hover {
-	color: darken(a.$clr-primary, 5%);
-}
-
-.btn-add:active {
-	color: a.$clr-primary;
-}
-
-.deleteIcon {
-	position: absolute;
-	right: a.rem(10);
-	color: a.$clr-primary;
-	font-size: a.rem(25);
-	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	white-space: nowrap;
+	border-radius: a.rem(8);
+	font-size: a.$text-xl;
+	font-weight: a.$font-medium;
+	transition: all 0.2s ease-in-out;
+	padding: 0.5rem 1rem;
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 a.rem(2) a.$clr-primary;
+	}
+	&:disabled {
+		pointer-events: none;
+		opacity: 0.5;
+	}
+	&--primary {
+		background-color: a.$clr-primary;
+		color: a.$clr-primary-ultra-light;
+		&:hover {
+			background-color: darken(a.$clr-primary, 5%);
+		}
+		&:active {
+			background-color: a.$clr-primary;
+		}
+	}
+	&--secondary {
+		background-color: a.$clr-primary-ultra-light;
+		color: a.$clr-primary;
+		&:hover {
+			background-color: a.$clr-primary-light;
+		}
+		&:active {
+			background-color: a.$clr-primary-ultra-light;
+		}
+	}
+	&--danger {
+		background-color: a.$clr-danger;
+		color: a.$clr-primary-ultra-light;
+		&:hover {
+			background-color: darken(a.$clr-danger, 5%);
+		}
+		&:active {
+			background-color: a.$clr-danger;
+		}
+	}
+	&--success {
+		background-color: a.$clr-success;
+		color: a.$clr-primary-ultra-light;
+		&:hover {
+			background-color: darken(a.$clr-success, 5%);
+		}
+		&:active {
+			background-color: a.$clr-success;
+		}
+	}
+	&--warning {
+		background-color: a.$clr-warning;
+		color: a.$clr-primary-ultra-light;
+		&:hover {
+			background-color: darken(a.$clr-warning, 5%);
+		}
+		&:active {
+			background-color: a.$clr-warning;
+		}
+	}
+	&--info {
+		background-color: a.$clr-info;
+		color: a.$clr-primary-ultra-light;
+		&:hover {
+			background-color: darken(a.$clr-info, 5%);
+		}
+		&:active {
+			background-color: a.$clr-info;
+		}
+	}
+	&--link {
+		background-color: transparent;
+		color: a.$clr-primary;
+		&:hover {
+			background-color: a.$clr-primary-ultra-light;
+		}
+		&:active {
+			background-color: transparent;
+		}
+	}
+	&--icon {
+		background-color: transparent;
+		color: a.$clr-primary;
+		&:hover {
+			background-color: a.$clr-primary-ultra-light;
+		}
+		&:active {
+			background-color: transparent;
+		}
+	}
+	&--icon-only {
+		background-color: transparent;
+		color: a.$clr-primary;
+		&:hover {
+			background-color: a.$clr-primary-ultra-light;
+		}
+		&:active {
+			background-color: transparent;
+		}
+	}
+	&--ghost {
+		background-color: transparent;
+		color: a.$clr-primary;
+		&:hover {
+			background-color: a.$clr-primary-ultra-light;
+		}
+		&:active {
+			background-color: transparent;
+		}
+	}
+	&--outline {
+		background-color: transparent;
+		color: a.$clr-primary;
+		border: a.rem(2) solid a.$clr-primary;
+		&:hover {
+			background-color: a.$clr-primary-ultra-light;
+		}
+		&:active {
+			background-color: transparent;
+		}
+	}
 }

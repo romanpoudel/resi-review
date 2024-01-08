@@ -1,15 +1,28 @@
 @use "../abstracts" as a;
 
 .header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	&__logo {
+		display: flex;
+		align-items: center;
+		gap: a.rem(10);
 		&--icon{
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			background-color: a.$clr-primary;
 			color: a.$clr-primary-ultra-light;
 			border-radius: a.rem(10);
-			padding: a.rem(5);
+			font-size: a.$text-2xl;
+			width: a.rem(35);
+			height: a.rem(35);
 		}
 		&--text {
-			color: a.$clr-primary-dark;
+			color: a.$clr-primary;
+			font-size: a.$text-xl;
+			font-weight: a.$font-extrabold;
 		}
 	}
 }
