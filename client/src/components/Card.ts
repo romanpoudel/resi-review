@@ -9,14 +9,7 @@ class Card extends HTMLElement {
 						</figure>
 						<div class="card__desc">
 							<h2 class="card__desc--title">${this.getAttribute("city")}</h2>
-							<div class="card__desc--info">
-								<div class="card__desc--rating">
-									<i class="bi bi-star-half card__desc--star"></i>
-									  <span class="card__desc--rating-value">${this.getAttribute("star")}</span>
-									  <p class="card__desc--reviews">(${this.getAttribute("review")} Reviews)</p>
-								</div>
-								<div class="card__desc--price">$${this.getAttribute("price")} USD</div>
-							</div>
+							<rating-component star="${this.getAttribute("star")}" review="${this.getAttribute("review")}" price="${this.getAttribute("price")}"></rating-component>
 						</div>
 						</a>
 					</div>

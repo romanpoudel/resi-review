@@ -4,23 +4,53 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../../styles/main.scss" />
-		<!-- Bootstrap Font Icon CSS -->
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-		/>
 		<title>Details &bullet; Resi-Review</title>
 	</head>
 	<body>
-		<header class="container detail-header">
-			<div class="detail-header--left">
-				<logo-component></logo-component>
+		<div class="header-container">
+			<header class="container detail-header">
+				<div class="detail-header--left">
+					<logo-component></logo-component>
+				</div>
+				<div class="detail-header--right">
+					<search-component></search-component>
+				</div>
+			</header>
+		</div>
+		<main class="container detail-main">
+			<div class="detail-main__left">
+				<div class="house">
+					<h2 class="house__title">871 Gewuga Pass, Boloclup</h2>
+					<figure class="house__image">
+						<img
+							src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="house image"
+						/>
+					</figure>
+					<div class="house__detail">
+						<h3>Reviews</h3>
+						<div class="card__desc--rating">
+							<rating-component
+								star="4"
+								review="77"
+								price="2000"
+							></rating-component>
+						</div>
+					</div>
+					<div class="review-container">
+						<review-component></review-component>
+						<review-component></review-component>
+						<review-component></review-component>
+					</div>
+					
+					
+				</div>
 			</div>
-			<div class="detail-header--right">
-				<search-component></search-component>
-			</div>
-		</header>
+			<div class="detail-main__right"></div>
+		</main>
 		<script defer src="/src/components/Logo.ts"></script>
 		<script defer src="/src/components/Search.ts"></script>
+		<script defer src="/src/components/Rating.ts"></script>
+		<script defer src="/src/components/Review.ts"></script>
 	</body>
 </html>

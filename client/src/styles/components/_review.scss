@@ -1,0 +1,81 @@
+@use "../abstracts" as a;
+
+.review {
+	font-size: a.$text-xs;
+	display: flex;
+	flex-direction: row;
+	gap: a.rem(10);
+	&--left {
+		display: flex;
+		flex-direction: column;
+	}
+	&--right {
+		display: flex;
+		flex-direction: row;
+		gap: a.rem(10);
+    font-weight: a.$font-semibold;
+	}
+	&__star {
+		display: flex;
+		gap: a.rem(5);
+    i{
+      color: a.$clr-warning;
+    }
+	}
+	&__author {
+		font-weight: a.$font-extrabold;
+	}
+	&__timestamp {
+		color: a.$clr-gray;
+	}
+	&__header {
+		display: flex;
+    align-items: center;
+    margin-bottom: a.rem(4);
+		h4 {
+			margin: 0;
+		}
+	}
+	&__bullet {
+		padding-inline: a.rem(8);
+		color: a.$clr-gray;
+	}
+	&__reply-btn {
+		border: none;
+		font-size: a.$text-sm;
+		font-weight: a.$font-semibold;
+		color: a.$clr-black;
+		@include a.breakpoint(large) {
+			font-size: a.$text-base;
+		}
+	}
+	&__likes {
+		display: flex;
+		align-items: center;
+		gap: a.rem(8);
+		color: a.$clr-primary;
+		font-weight: a.$font-semibold;
+    font-size: a.$text-sm;
+	}
+  
+	&__bottom {
+		display: flex;
+		align-items: center;
+	}
+	&__text {
+		font-family: "Lato", sans-serif;
+		font-size: a.$text-sm;
+		color: a.$clr-gray;
+		span {
+			font-weight: a.$font-semibold;
+			color: a.$clr-primary;
+			white-space: nowrap;
+		}
+	}
+}
+
+.review-container {
+	display: flex;
+	flex-direction: column;
+	gap: a.rem(30);
+}

@@ -35,7 +35,6 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: a.rem(30);
 	gap: a.rem(30);
 	&--right{
 		width: 80%;
@@ -51,6 +50,7 @@
 			}
 		}
 		.search-section__input {
+			// background-color: a.$clr-primary-ultra-light;
 			padding: a.rem(10) a.rem(40) a.rem(10) a.rem(20);
 			@include a.breakpoint(small) {
 				padding: a.rem(10) a.rem(40) a.rem(10) a.rem(40);
@@ -74,4 +74,9 @@
 			}
 		}
 	}
+}
+
+.header-container{
+	padding: a.rem(25) 0;
+	border-bottom: a.rem(2) solid a.$clr-light-gray;
 }
