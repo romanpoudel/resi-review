@@ -9,7 +9,7 @@
 		display: flex;
 		align-items: center;
 		gap: a.rem(10);
-		&--icon{
+		&--icon {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -26,6 +26,52 @@
 			font-size: a.$text-xl;
 			font-weight: a.$font-extrabold;
 			white-space: nowrap;
+		}
+	}
+}
+
+.detail-header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: a.rem(30);
+	gap: a.rem(30);
+	&--right{
+		width: 80%;
+	}
+	
+	.search-section {
+		width: 100%;
+		margin-top: 0;
+		&__location{
+			display: none;
+			@include a.breakpoint(small) {
+				display: block;
+			}
+		}
+		.search-section__input {
+			padding: a.rem(10) a.rem(40) a.rem(10) a.rem(20);
+			@include a.breakpoint(small) {
+				padding: a.rem(10) a.rem(40) a.rem(10) a.rem(40);
+			}
+			@include a.breakpoint(medium) {
+				padding: a.rem(10) a.rem(60) a.rem(10) a.rem(45);
+			}
+			&::placeholder {
+				color: a.$clr-gray;
+				font-size: a.$text-sm;
+				@include a.breakpoint(medium) {
+					font-size: a.$text-base;
+				}
+			}
+		}
+		&__search{
+			font-size: a.$text-xs;
+			width: a.rem(40);
+			@include a.breakpoint(medium) {
+				font-size: a.$text-base;
+			}
 		}
 	}
 }
