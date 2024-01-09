@@ -28,7 +28,7 @@
 						/>
 					</figure>
 					<div class="house__detail">
-						<h3>Reviews</h3>
+						<h3>Review</h3>
 						<div class="card__desc--rating">
 							<rating-component
 								star="4"
@@ -41,16 +41,79 @@
 						<review-component></review-component>
 						<review-component></review-component>
 						<review-component></review-component>
+						<review-component></review-component>
+						<review-component></review-component>
+						<review-component></review-component>
 					</div>
-					
-					
 				</div>
 			</div>
-			<div class="detail-main__right"></div>
+			
+			<div class="detail-main__right">
+				<form action="" class="form">
+					<div class="form__header">
+						<h3 class="form__header--title">Add Review</h3>
+						<div class="form__header--rate">
+							<i class="bi bi-star"></i>
+							<i class="bi bi-star"></i>
+							<i class="bi bi-star"></i>
+							<i class="bi bi-star"></i>
+							<i class="bi bi-star"></i>
+						</div>
+					</div>
+					<div class="form__estimate">
+						<div class="form__estimate--title">
+							<p>Social Estimation:</p>
+							<p>$239.000*</p>
+						</div>
+						<input
+							type="range"
+							name="estimate"
+							id="estimate"
+							placeholder="Estimate"
+						/>
+					</div>
+					<div class="form__textarea">
+						<textarea
+							name="review"
+							id="review"
+							cols="30"
+							rows="10"
+							placeholder="Review"
+						></textarea>
+					</div>
+					<div class="form__agree">
+						<input type="checkbox" id="owner" placeholder="Owner" />
+						<p>I'm the owner of the property.</p>
+					</div>
+					<div class="form__submit">
+						<button type="submit" class="btn btn--primary">Add review</button>
+					</div>
+				</form>
+				<hr>
+				<div class="map">
+					<h4>See house on map</h4>
+					<figure>
+						<img
+							src="https://e1.pxfuel.com/desktop-wallpaper/378/922/desktop-wallpaper-1250x852px-google-maps-maps-google.jpg"
+							alt="map image"
+						/>
+					</figure>
+				</div>
+				<div class="review-container--small">
+					<review-component></review-component>
+					<review-component></review-component>
+					<review-component></review-component>
+					<review-component></review-component>
+					<review-component></review-component>
+					<review-component></review-component>
+				</div>
+			</div>
 		</main>
+		<footer-component></footer-component>
 		<script defer src="/src/components/Logo.ts"></script>
 		<script defer src="/src/components/Search.ts"></script>
 		<script defer src="/src/components/Rating.ts"></script>
 		<script defer src="/src/components/Review.ts"></script>
+		<script defer src="/src/components/Footer.ts"></script>
 	</body>
 </html>

@@ -42,3 +42,17 @@
     }
   }
 }
+
+.review-container{
+  display: none;
+  @include a.breakpoint(midsize) {
+    display: block;
+  }
+}
+
+.review-container--small{
+  display: block;
+  @include a.breakpoint(midsize) {
+    display: none;
+  }
+}

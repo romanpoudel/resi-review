@@ -1,0 +1,59 @@
+@use "../abstracts" as a;
+
+.form {
+	background-color: a.$clr-white;
+	border-radius: a.rem(8);
+	padding: a.rem(25);
+  margin-bottom: a.rem(40);
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: a.rem(25);
+		h3 {
+			margin: 0;
+			font-size: a.$text-lg;
+			font-family: "Lato", sans-serif;
+		}
+		&--rate {
+			white-space: nowrap;
+			color: a.$clr-warning;
+		}
+	}
+	&__estimate {
+		border: a.rem(1) solid a.$clr-light-gray;
+		border-radius: a.rem(4);
+		padding: a.rem(15) a.rem(10);
+		margin-bottom: a.rem(30);
+		&--title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: a.rem(40);
+			p {
+				font-size: a.$text-sm;
+				font-weight: a.$font-semibold;
+			}
+			input {
+				background-color: a.$clr-gray;
+			}
+		}
+	}
+	&__textarea {
+		font-size: a.$text-sm;
+	}
+	&__agree {
+		display: flex;
+		align-items: center;
+		gap: a.rem(10);
+		margin-bottom: a.rem(30);
+		margin-top: a.rem(20);
+	}
+	&__submit {
+		.btn {
+			width: 100%;
+      padding-block: a.rem(10);
+		}
+	}
+}

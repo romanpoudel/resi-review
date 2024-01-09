@@ -14,6 +14,9 @@
 		flex-direction: row;
 		gap: a.rem(10);
     font-weight: a.$font-semibold;
+    @include a.breakpoint(large) {
+      font-size: a.$text-sm;
+    }
 	}
 	&__star {
 		display: flex;
@@ -24,6 +27,9 @@
 	}
 	&__author {
 		font-weight: a.$font-extrabold;
+    @include a.breakpoint(large) {
+      font-size: a.$text-sm;
+    }
 	}
 	&__timestamp {
 		color: a.$clr-gray;
@@ -66,6 +72,8 @@
 		font-family: "Lato", sans-serif;
 		font-size: a.$text-sm;
 		color: a.$clr-gray;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
 		span {
 			font-weight: a.$font-semibold;
 			color: a.$clr-primary;

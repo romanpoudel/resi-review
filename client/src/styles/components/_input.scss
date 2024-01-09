@@ -1,52 +1,37 @@
 @use "../abstracts" as a;
 
-.input {
+input[type="range"] {
 	width: 100%;
-	min-height: a.rem(48);
-	padding: a.rem(8) a.rem(16);
-	border-radius: a.rem(4);
-	border: a.rem(1) solid #ccc;
 }
 
-.input:focus {
-	outline: max(2px, 0.15em) solid a.$clr-primary;
-	outline-offset: max(2px, 0.15em);
-}
-
-/* Hide the default checkbox */
-input[type="checkbox"] {
-	-moz-appearance: none;
+input[type="range"]{
 	-webkit-appearance: none;
-	appearance: none;
-	min-width: a.rem(30);
-	height: a.rem(30);
-	border-radius: 50%;
-	outline: none;
-	border: 2px solid #ccc;
-	position: relative;
-	cursor: pointer;
-	transition: background-color 0.3s;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: a.$clr-light-gray;
+	border-radius: a.rem(20);
+	height: a.rem(4);
+	margin-bottom: a.rem(15);
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: a.rem(16);
+		height: a.rem(16);
+		border-radius: 50%;
+		background: a.$clr-white;
+		cursor: pointer;
+		border: a.rem(5) solid a.$clr-light-gray;
+	}
 }
 
-input[type="checkbox"]:checked {
-	background-color: a.$clr-primary;
+textarea {
+	width: 100%;
 	border-color: a.$clr-primary;
-}
-
-/* Create a checkmark using the ::before pseudo-element */
-input[type="checkbox"]::before {
-	content: "✔";
-	font-size: 14px;
-	color: white;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	opacity: 0; /* Initially hidden */
-	transition: opacity 0.3s;
-}
-
-/* Show the checkmark when the checkbox is checked */
-input[type="checkbox"]:checked::before {
-	opacity: 1;
+	border-radius: a.rem(4);
+	padding: a.rem(10);
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 a.rem(2) a.$clr-primary-light;
+		border: none;
+	}
 }
