@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Details &bullet; Resi-Review</title>
+		<script type="module" crossorigin src="/assets/detail-PKMQs3Z1.js"></script>
+		<link rel="modulepreload" crossorigin href="/assets/Rating-ULrbUqxg.js">
+		<link rel="stylesheet" crossorigin href="/assets/main-yeYJr3hI.css">
+	</head>
+	<body>
+		<div class="header-container">
+			<header class="container detail-header">
+				<div class="detail-header--left">
+					<logo-component></logo-component>
+				</div>
+				<div class="detail-header--right">
+					<search-component></search-component>
+				</div>
+			</header>
+		</div>
+		<main class="container detail-main">
+			<div class="detail-main__left">
+				<div class="house">
+					<h2 class="house__title">871 Gewuga Pass, Boloclup</h2>
+					<figure class="house__image">
+						<img
+							src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="house image"
+						/>
+					</figure>
+					<div class="house__detail">
+						<h3>Review</h3>
+						<div class="card__desc--rating">
+							<rating-component
+								star="4"
+								review="77"
+								price="2000"
+							></rating-component>
+						</div>
+					</div>
+					<div class="review-container">
+						<review-component></review-component>
+						<review-component></review-component>
+						<review-component></review-component>
+						<review-component></review-component>
+						<review-component></review-component>
+						<review-component></review-component>
+					</div>
+				</div>
+			</div>
+			
+			<div class="detail-main__right">
+				<form action="" class="form">
+					<div class="form__header">
+						<h3 class="form__header--title">Add Review</h3>
+						<div class="form__header--rate">
+							<i class="bi bi-star"></i>
+							<i class="bi bi-star"></i>
+							<i class="bi bi-star"></i>
+							<i class="bi bi-star"></i>
+							<i class="bi bi-star"></i>
+						</div>
+					</div>
+					<div class="form__estimate">
+						<div class="form__estimate--title">
+							<p>Social Estimation:</p>
+							<p>$239.000*</p>
+						</div>
+						<input
+							type="range"
+							name="estimate"
+							id="estimate"
+							placeholder="Estimate"
+						/>
+					</div>
+					<div class="form__textarea">
+						<textarea
+							name="review"
+							id="review"
+							cols="30"
+							rows="10"
+							placeholder="Review"
+						></textarea>
+					</div>
+					<div class="form__agree">
+						<input type="checkbox" id="owner" placeholder="Owner" />
+						<p>I'm the owner of the property.</p>
+					</div>
+					<div class="form__submit">
+						<button type="submit" class="btn btn--primary">Add review</button>
+					</div>
+				</form>
+				<hr>
+				<div class="map">
+					<h4>See house on map</h4>
+					<figure>
+						<img
+							src="https://e1.pxfuel.com/desktop-wallpaper/378/922/desktop-wallpaper-1250x852px-google-maps-maps-google.jpg"
+							alt="map image"
+						/>
+					</figure>
+				</div>
+				<div class="review-container--small">
+					<review-component></review-component>
+					<review-component></review-component>
+					<review-component></review-component>
+					<review-component></review-component>
+					<review-component></review-component>
+					<review-component></review-component>
+				</div>
+			</div>
+		</main>
+		<footer-component></footer-component>
+	</body>
+</html>

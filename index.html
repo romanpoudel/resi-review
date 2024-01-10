@@ -1,1 +1,52 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login &bullet; Resi-Review</title><script type="module" crossorigin src="/resi-review/assets/main-fnI30bfP.js"></script><link rel="stylesheet" crossorigin href="/resi-review/assets/main-yeYJr3hI.css"></head><body><div class="auth"><div class="auth__left"><figure><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="signup image"></figure></div><div class="auth__right"><div class="auth__right__container"><div class="auth__header"><h1>Login</h1><p>Fill up the login form</p></div><form action="" class="auth-form"><div class="form__group"><label for="email">Email</label> <input type="email" name="email" id="email" placeholder="john@gmail.com" required></div><div class="form__group"><label for="password">Password</label> <input type="password" name="password" id="password" required></div><div class="form__submit"><button type="submit" class="btn btn--primary">Login</button></div></form><p>Don't have an account? <a href="../signup/index.html">Signup</a></p></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home  &bullet; Resi-Review</title>
+		<script type="module" crossorigin src="/assets/main-2vkGnZLI.js"></script>
+		<link rel="modulepreload" crossorigin href="/assets/Rating-ULrbUqxg.js">
+		<link rel="stylesheet" crossorigin href="/assets/main-yeYJr3hI.css">
+	</head>
+	<body>
+		<header class="container header">
+			<logo-component></logo-component>
+			<div class="header__right">
+				<a class="btn btn--link" href="./src/views/login/index.html">Login</a>
+				<a class="btn btn--outline" href="./src/views/signup/index.html">Signup</a>
+			</div>
+		</header>
+		<main id="app" class="container">
+			<div class="hero-section">
+				<h1 class="hero-section__title">Real Reviews. Real Houses.</h1>
+				<p class="hero-section__desc">Read and leave reviews.</p>
+			</div>
+			<search-component></search-component>
+			<div class="reviews">
+				<div class="reviews__top">
+					<h2 class="reviews__top--title">Reviews</h2>
+					<select
+						class="reviews__top--sort dropdown"
+						id="category"
+						title="category"
+					>
+						<option value="" disabled selected>Sort by</option>
+						<option value="rent">Flat</option>
+						<option value="buy">Room</option>
+						<option value="buy">Price</option>
+					</select>
+				</div>
+				<div class="reviews__bottom">
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+				</div>
+			</div>
+		</main>
+		<footer-component></footer-component>
+	</body>
+</html>
