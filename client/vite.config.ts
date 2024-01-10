@@ -1,12 +1,13 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import "dotenv/config";
+// import "dotenv/config";
 
-const isGitHubPages =
-	process.env.NODE_ENV === "production" && process.env.GITHUB_PAGES === "true";
+// const isGitHubPages =
+// process.env.NODE_ENV === "production" && process.env.GITHUB_PAGES === "true";
 
 export default defineConfig({
-	base: isGitHubPages ? "/resi-review/" : "/",
+	// base: isGitHubPages ? "/resi-review/" : "/",
+	base: "/resi-review/",
 	build: {
 		rollupOptions: {
 			input: {
