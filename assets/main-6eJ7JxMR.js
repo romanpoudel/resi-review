@@ -1,6 +1,6 @@
-import"./Rating-ULrbUqxg.js";/* empty css             */class i extends HTMLElement{constructor(){super();const t=window.location.pathname.endsWith("/")?window.location.pathname:window.location.pathname+"/";this.innerHTML=`
+import"./Rating-ULrbUqxg.js";/* empty css             */class i extends HTMLElement{constructor(){super();this.innerHTML=`
     <div class="card">
-		<a href="${t}src/views/details/index.html?${this.getAttribute("city")}">
+		<a href="resi-review/src/views/details/index.html?${this.getAttribute("city")}">
 						<figure class="card__image">
 							<img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="house image" />
 						</figure>
