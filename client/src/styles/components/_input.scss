@@ -1,7 +1,7 @@
 @use "../abstracts" as a;
 
 input{
-	padding: a.rem(4) a.rem(6);
+	padding: a.rem(4) a.rem(6) ;
 	height: a.rem(35);
 	border-radius: a.rem(6);
 	border: a.rem(2) solid a.$clr-gray;

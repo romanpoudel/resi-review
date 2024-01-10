@@ -42,13 +42,14 @@
 				display: block;
 			}
 		}
-		.search-section__input {
-			padding: a.rem(10) a.rem(40) a.rem(10) a.rem(20);
+		&__input {
+			padding: a.rem(10) a.rem(40) a.rem(10) a.rem(20) !important;
+			height: auto;
 			@include a.breakpoint(small) {
-				padding: a.rem(10) a.rem(40) a.rem(10) a.rem(40);
+				padding: a.rem(10) a.rem(40) a.rem(10) a.rem(40) !important;
 			}
 			@include a.breakpoint(medium) {
-				padding: a.rem(10) a.rem(60) a.rem(10) a.rem(45);
+				padding: a.rem(10) a.rem(60) a.rem(10) a.rem(45) !important;
 			}
 			&::placeholder {
 				color: a.$clr-gray;

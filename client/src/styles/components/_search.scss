@@ -17,16 +17,18 @@
 	
 	}
 	&__input {
-		padding: a.rem(15) a.rem(60) a.rem(15) a.rem(45);
+		padding: a.rem(15) a.rem(60) a.rem(15) a.rem(45) !important;
 		border-radius: a.rem(6);
 		width:100%;
 		background-color: #fff;
 		border: none;
-		
+		height: auto;
 		font-weight: a.$font-medium;
 		font-family: "Lato", sans-serif;
 		&:focus {
 			outline: none;
+			box-shadow: none;
+			border: none;
 		}
 		@include a.breakpoint(medium) {
 			padding: a.rem(20) a.rem(60) a.rem(20) a.rem(45);
@@ -38,12 +40,16 @@
 		display: grid;
 		place-items: center;
 		right: 0;
-		font-size: a.$text-base;
+		font-size: a.$text-sm;
 		background-color: a.$clr-primary;
 		color: a.$clr-primary-ultra-light;
 		border-radius:  0  a.rem(6) a.rem(6) 0;
 		height: 100%;
-		width: a.rem(60);
+		width: a.rem(40);
 		cursor: pointer;
+		@include a.breakpoint(small) {
+			width: a.rem(60);
+			font-size: a.$text-base;
+		}
 	}
 }
