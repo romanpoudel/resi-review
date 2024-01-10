@@ -1,6 +1,6 @@
 @use "../abstracts" as a;
 
-.signup {
+.auth {
 	background-color: a.$clr-primary-ultra-light;
 	height: 100svh;
 	@include a.flex(row, center, center);
@@ -49,4 +49,10 @@
 	a{
 		color: a.$clr-primary;
 	}
+}
+
+.auth-form {
+	@include a.flex(column, center, center);
+	gap: a.rem(16);
+	width: 100%;
 }

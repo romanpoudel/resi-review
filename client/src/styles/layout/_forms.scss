@@ -70,8 +70,4 @@
 	}
 }
 
-.signup-form {
-	@include a.flex(column, center, center);
-	gap: a.rem(16);
-	width: 100%;
-}
+
