@@ -1,8 +1,7 @@
 @use "../abstracts" as a;
 
 .card {
-	display: flex;
-	flex-direction: column;
+	@include a.flex(column);
 	border-radius: a.rem(8);
 	background-color: #fff;
 	max-width: a.rem(250);
@@ -33,8 +32,7 @@
 		}
 	}
 	&__desc {
-		display: flex;
-		flex-direction: column;
+		@include a.flex(column);
 		&--title {
 			font-size: a.$text-base;
 			font-weight: a.$font-semibold;
@@ -45,15 +43,12 @@
 			padding-bottom: a.rem(10);
 		}
 		&--info {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
+			@include a.flex(row, center, space-between);
 			padding-inline: a.rem(15);
 			padding-bottom: a.rem(15);
 		}
 		&--rating {
-			display: flex;
-			align-items: center;
+			@include a.flex(row, center);
 		}
 		&--star {
 			color: a.$clr-warning;

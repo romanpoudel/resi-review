@@ -1,0 +1,52 @@
+@use "../abstracts" as a;
+
+.signup {
+	background-color: a.$clr-primary-ultra-light;
+	height: 100svh;
+	@include a.flex(row, center, center);
+	&__header{
+		@include a.flex(column, center, center);
+		gap: a.rem(6);
+	}
+	&__left {
+    display: none;
+    @include a.breakpoint(midsize) {
+      display: block;
+    }
+		flex: 1;
+		figure {
+			width: 100%;
+			height: 100vh;
+			margin: 0;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+	&__right {
+		flex: 1;
+		@include a.flex(column, center, center);
+		&__container {
+      gap: a.rem(20);
+      width: 60%;
+			min-width: a.rem(300);
+      @include a.breakpoint(midsize) {
+        width: auto;
+      }
+			h1 {
+				font-size: a.$text-3xl;
+        color: a.$clr-primary;
+			}
+			p {
+				color: a.$clr-gray;
+			}
+			@include a.flex(column, center, center);
+		}
+	}
+	a{
+		color: a.$clr-primary;
+	}
+}

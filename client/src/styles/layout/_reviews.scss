@@ -9,9 +9,7 @@
     margin-top: a.rem(50);
   }
 	&__top {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+    @include a.flex(row, center, space-between);
 		
 		&--title {
       font-size: a.$text-lg;

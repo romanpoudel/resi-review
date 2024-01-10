@@ -8,14 +8,10 @@
 }
 
 .footer-content{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  @include a.flex(column, center, space-between);
   gap: a.rem(8);
   @include a.breakpoint(medium) {
-    flex-direction: row;
-    align-items: flex-start;
+    @include a.flex(row, flex-start);
     gap: a.rem(10);
   }
   a{

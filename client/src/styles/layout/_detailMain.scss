@@ -1,13 +1,10 @@
 @use "../abstracts" as a;
+
 .detail-main {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-between;
+	@include a.flex(column, center, space-between);
   gap: a.rem(30);
 	@include a.breakpoint(midsize) {
-		flex-direction: row;
-    align-items: flex-start;
+		@include a.flex(row, flex-start, space-between);
     gap:0;
 	}
 	&__left {
@@ -45,9 +42,7 @@
 			margin-top: 0;
 			font-size: a.$text-xl;
 		}
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		@include a.flex(row, center, space-between);
 		padding-top: a.rem(15);
 		.card__desc--info {
 			gap: a.rem(30);
@@ -60,9 +55,7 @@
 }
 
 .map {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	@include a.flex(column,stretch , center);
   margin-bottom: a.rem(40);
 	h4 {
 		margin-top: a.rem(10);

@@ -3,6 +3,7 @@
 @use "components";
 @use "layout";
 @use "vendors";
+@use "pages";
 
 body {
   background-color: a.$clr-primary-ultra-light;

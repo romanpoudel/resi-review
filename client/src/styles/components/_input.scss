@@ -1,5 +1,16 @@
 @use "../abstracts" as a;
 
+input{
+	padding: a.rem(4) a.rem(6);
+	height: a.rem(35);
+	border-radius: a.rem(6);
+	border: a.rem(2) solid a.$clr-gray;
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 a.rem(2) a.$clr-primary;
+		border: none;
+	}
+}
 input[type="range"] {
 	width: 100%;
 }

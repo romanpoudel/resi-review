@@ -4,12 +4,10 @@
 	background-color: a.$clr-white;
 	border-radius: a.rem(8);
 	padding: a.rem(25);
-  margin-bottom: a.rem(40);
+	margin-bottom: a.rem(40);
 
 	&__header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		@include a.flex(row, center, space-between);
 		margin-bottom: a.rem(25);
 		h3 {
 			margin: 0;
@@ -27,9 +25,7 @@
 		padding: a.rem(15) a.rem(10);
 		margin-bottom: a.rem(30);
 		&--title {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
+			@include a.flex(row, center, space-between);
 			margin-bottom: a.rem(40);
 			p {
 				font-size: a.$text-sm;
@@ -44,16 +40,38 @@
 		font-size: a.$text-sm;
 	}
 	&__agree {
-		display: flex;
-		align-items: center;
+		@include a.flex(row, center);
 		gap: a.rem(10);
 		margin-bottom: a.rem(30);
 		margin-top: a.rem(20);
 	}
 	&__submit {
+		width: 100%;
 		.btn {
 			width: 100%;
-      padding-block: a.rem(10);
+			padding-block: a.rem(10);
 		}
 	}
+	&__group {
+		@include a.flex(column, flex-start, center);
+		gap: a.rem(8);
+		font-size: a.$text-base;
+		font-weight: a.$font-medium;
+		width: 100%;
+		input{
+			width: 100%;
+		}
+	}
+	&__terms{
+		width: 100%;
+		@include a.flex(row, center, flex-start);
+		gap: a.rem(10);
+		font-size: a.$text-sm;
+	}
+}
+
+.signup-form {
+	@include a.flex(column, center, center);
+	gap: a.rem(16);
+	width: 100%;
 }

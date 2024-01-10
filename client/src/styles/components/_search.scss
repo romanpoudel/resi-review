@@ -5,8 +5,7 @@
 	margin-inline: auto;
 	margin-top: a.rem(20);
 	position: relative;
-	display: flex;
-	align-items: center;
+	@include a.flex(row, center);
 	@include a.breakpoint(medium) {
 		margin-top: a.rem(50);
 	}

@@ -1,18 +1,14 @@
 @use "../abstracts" as a;
 
 .header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	@include a.flex(row, center, space-between);
 	margin-top: a.rem(30);
 	&__logo {
 		display: flex;
 		align-items: center;
 		gap: a.rem(10);
 		&--icon {
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			@include a.flex(row, center, center);
 			background-color: a.$clr-primary;
 			color: a.$clr-primary-ultra-light;
 			border-radius: a.rem(10);
@@ -31,10 +27,7 @@
 }
 
 .detail-header {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
+	@include a.flex(row, center, space-between);
 	gap: a.rem(30);
 	&--right{
 		width: 80%;
@@ -50,7 +43,6 @@
 			}
 		}
 		.search-section__input {
-			// background-color: a.$clr-primary-ultra-light;
 			padding: a.rem(10) a.rem(40) a.rem(10) a.rem(20);
 			@include a.breakpoint(small) {
 				padding: a.rem(10) a.rem(40) a.rem(10) a.rem(40);

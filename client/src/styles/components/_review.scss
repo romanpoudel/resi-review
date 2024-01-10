@@ -2,16 +2,13 @@
 
 .review {
 	font-size: a.$text-xs;
-	display: flex;
-	flex-direction: row;
+	@include a.flex();
 	gap: a.rem(10);
 	&--left {
-		display: flex;
-		flex-direction: column;
+		@include a.flex(column);
 	}
 	&--right {
-		display: flex;
-		flex-direction: row;
+		@include a.flex();
 		gap: a.rem(10);
     font-weight: a.$font-semibold;
     @include a.breakpoint(large) {
@@ -19,7 +16,7 @@
     }
 	}
 	&__star {
-		display: flex;
+		@include a.flex();
 		gap: a.rem(5);
     i{
       color: a.$clr-warning;
@@ -35,8 +32,7 @@
 		color: a.$clr-gray;
 	}
 	&__header {
-		display: flex;
-    align-items: center;
+		@include a.flex(row,center);
     margin-bottom: a.rem(4);
 		h4 {
 			margin: 0;
@@ -56,8 +52,7 @@
 		}
 	}
 	&__likes {
-		display: flex;
-		align-items: center;
+		@include a.flex(row,center);
 		gap: a.rem(8);
 		color: a.$clr-primary;
 		font-weight: a.$font-semibold;
@@ -65,8 +60,7 @@
 	}
   
 	&__bottom {
-		display: flex;
-		align-items: center;
+		@include a.flex(row,center);
 	}
 	&__text {
 		font-family: "Lato", sans-serif;
@@ -83,7 +77,6 @@
 }
 
 .review-container {
-	display: flex;
-	flex-direction: column;
+	@include a.flex(column);
 	gap: a.rem(30);
 }
