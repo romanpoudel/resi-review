@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/client/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home  &bullet; Resi-Review</title>
+		<script type="module" crossorigin src="/client/assets/index-jgJ2GKQE.js"></script>
+		<link rel="stylesheet" crossorigin href="/client/assets/index-nMHa1VJh.css">
+	</head>
+	<body>
+		<header class="container header">
+			<logo-component></logo-component>
+			<div class="header__right">
+				<a class="btn btn--link" href="/src/views/login/">Login</a>
+				<a class="btn btn--outline" href="/src/views/signup/">Signup</a>
+			</div>
+		</header>
+		<main id="app" class="container">
+			<div class="hero-section">
+				<h1 class="hero-section__title">Real Reviews. Real Houses.</h1>
+				<p class="hero-section__desc">Read and leave reviews.</p>
+			</div>
+			<search-component></search-component>
+			<div class="reviews">
+				<div class="reviews__top">
+					<h2 class="reviews__top--title">Reviews</h2>
+					<select
+						class="reviews__top--sort dropdown"
+						id="category"
+						title="category"
+					>
+						<option value="" disabled selected>Sort by</option>
+						<option value="rent">Flat</option>
+						<option value="buy">Room</option>
+						<option value="buy">Price</option>
+					</select>
+				</div>
+				<div class="reviews__bottom">
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+				</div>
+			</div>
+		</main>
+		<footer-component></footer-component>
+		<script defer src="/src/components/Logo.ts"></script>
+		<script defer src="/src/components/Search.ts"></script>
+		<script defer src="/src/components/Card.ts"></script>
+		<script defer src="/src/components/Footer.ts"></script>
+		<script defer src="/src/components/Rating.ts"></script>
+	</body>
+</html>
