@@ -1,0 +1,14 @@
+@use "../abstracts" as a;
+
+.avatar {
+	border-radius: 50%;
+	border: a.rem(2) solid a.$clr-primary;
+	overflow: hidden;
+	width: a.rem(40);
+	aspect-ratio: 1;
+	cursor: pointer;
+	img {
+		width: 100%;
+		object-fit: cover;
+	}
+}

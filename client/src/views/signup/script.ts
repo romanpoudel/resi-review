@@ -10,8 +10,17 @@ const form = document.getElementById("auth-form") as HTMLFormElement;
 const icon = document.getElementsByTagName(
 	"i"
 ) as HTMLCollectionOf<HTMLElement>;
+const checkbox = document.getElementById("checkbox") as HTMLInputElement;
+const submit = document.getElementById("submit") as HTMLButtonElement;
 
-console.log(icon);
+checkbox.addEventListener("change", function() {
+	if (this.checked) {
+		submit.disabled = false;
+	} else {
+		submit.disabled = true;
+	}
+});
+
 
 for (let i = 0; i < icon.length; i++) {
 	icon[i].addEventListener("click", () => {
@@ -35,7 +44,6 @@ for (let i = 0; i < icon.length; i++) {
 
 form?.addEventListener("submit", async (e) => {
 	e.preventDefault();
-	console.log("email", email.value.trim(), "password", password.value.trim());
 
 	//give data to backend
 	const requestOptions = {

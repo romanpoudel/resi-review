@@ -5,14 +5,19 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<link rel="stylesheet" href="./src/styles/main.scss" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Home  &bullet; Resi-Review</title>
+		<title>Home &bullet; Resi-Review</title>
 	</head>
 	<body>
 		<header class="container header">
 			<logo-component></logo-component>
+			<div class="header__avatar">
+				<avatar-component></avatar-component>
+			</div>
 			<div class="header__right">
 				<a class="btn btn--link" href="./src/views/login/index.html">Login</a>
-				<a class="btn btn--outline" href="./src/views/signup/index.html">Signup</a>
+				<a class="btn btn--outline" href="./src/views/signup/index.html"
+					>Signup</a
+				>
 			</div>
 		</header>
 		<main id="app" class="container">
@@ -36,21 +41,52 @@
 					</select>
 				</div>
 				<div class="reviews__bottom">
-					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
-					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
-					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
-					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
-					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
-					<card-component city="Amstradam" star="4.5" review="93" price="1000"></card-component>
+					<card-component
+						city="Amstradam"
+						star="4.5"
+						review="93"
+						price="1000"
+					></card-component>
+					<card-component
+						city="Amstradam"
+						star="4.5"
+						review="93"
+						price="1000"
+					></card-component>
+					<card-component
+						city="Amstradam"
+						star="4.5"
+						review="93"
+						price="1000"
+					></card-component>
+					<card-component
+						city="Amstradam"
+						star="4.5"
+						review="93"
+						price="1000"
+					></card-component>
+					<card-component
+						city="Amstradam"
+						star="4.5"
+						review="93"
+						price="1000"
+					></card-component>
+					<card-component
+						city="Amstradam"
+						star="4.5"
+						review="93"
+						price="1000"
+					></card-component>
 				</div>
 			</div>
 		</main>
 		<footer-component></footer-component>
-		<script type="module" src="./src/main.ts"></script>
+		<script type="module" defer src="./src/main.ts"></script>
 		<script type="module" defer src="./src/components/Logo.ts"></script>
 		<script type="module" defer src="./src/components/Search.ts"></script>
 		<script type="module" defer src="./src/components/Card.ts"></script>
 		<script type="module" defer src="./src/components/Footer.ts"></script>
 		<script type="module" defer src="./src/components/Rating.ts"></script>
+		<script type="module" defer src="./src/components/Avatar.ts"></script>
 	</body>
 </html>
