@@ -1,7 +1,9 @@
 import api from "./api/config.ts";
 
 const header_right = document.querySelector(".header__right") as HTMLElement;
-const header_avatar = document.querySelector(".header__avatar") as HTMLElement;
+const header_loggedin = document.querySelector(
+	".header__loggedin"
+) as HTMLElement;
 
 const requestOptions = {
 	method: "GET",
@@ -18,12 +20,12 @@ try {
 	const response = await api(requestOptions);
 	console.log("hey", response);
 	if (response.status === 200) {
-		header_right.style.display = "none";
-		header_avatar.style.display = "inline-block";
+		header_right.style.display = "flex";
+		header_loggedin.style.display = "none";
 	}
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 } catch (err: any) {
 	console.log(err);
-	header_right.style.display = "inline-block";
-	header_avatar.style.display = "none";
+	header_right.style.display = "none";
+	header_loggedin.style.display = "flex";
 }

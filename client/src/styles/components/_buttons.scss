@@ -88,26 +88,6 @@
 			background-color: transparent;
 		}
 	}
-	&--icon {
-		background-color: transparent;
-		color: a.$clr-primary;
-		&:hover {
-			background-color: a.$clr-primary-ultra-light;
-		}
-		&:active {
-			background-color: transparent;
-		}
-	}
-	&--icon-only {
-		background-color: transparent;
-		color: a.$clr-primary;
-		&:hover {
-			background-color: a.$clr-primary-ultra-light;
-		}
-		&:active {
-			background-color: transparent;
-		}
-	}
 	&--ghost {
 		background-color: transparent;
 		color: a.$clr-primary;

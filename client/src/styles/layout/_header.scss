@@ -3,6 +3,26 @@
 .header {
 	@include a.flex(row, center, space-between);
 	margin-top: a.rem(30);
+	&__loggedin{
+		@include a.flex(row, center, flex-end);
+		width: 100%;
+		.create-review{
+			cursor: pointer;
+			white-space: nowrap;
+			@include a.flex(row, center, space-between);
+			font-size: a.$text-base;
+			font-weight: a.$font-bold;
+			gap: a.rem(8);
+			p{
+				display: none;
+			}
+			@include a.breakpoint(small) {
+				p{
+					display: block;
+				}
+			}
+		}
+	}
 	&__logo {
 		display: flex;
 		align-items: center;
