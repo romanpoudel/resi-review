@@ -13,6 +13,7 @@ export const registerUser = asyncHandler(
     if (error) {
       throw new ApiError(400, error.message);
     }
+    delete value.confirmPassword;
     const user = await authService.registerUser(value);
     res.status(201).json(new ApiResponse(201, user, "User created"));
   }

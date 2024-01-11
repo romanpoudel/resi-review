@@ -53,6 +53,7 @@
 		}
 	}
 	&__group {
+		
 		@include a.flex(column, flex-start, center);
 		gap: a.rem(8);
 		font-size: a.$text-base;
@@ -60,6 +61,17 @@
 		width: 100%;
 		input{
 			width: 100%;
+		}
+		div{
+			width: 100%;
+			position: relative;
+		}
+		i{
+			position: absolute;
+			right: a.rem(10);
+			top: 50%;
+			transform: translateY(-50%);
+			cursor: pointer;
 		}
 	}
 	&__terms{

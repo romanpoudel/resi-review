@@ -18,11 +18,11 @@
 			</div>
 			<div class="auth__right">
 				<div class="auth__right__container">
-          <div class="auth__header">
-            <h1>Login</h1>
-            <p>Fill up the login form</p>
-          </div>
-					<form action="" class="auth-form">
+					<div class="auth__header">
+						<h1>Login</h1>
+						<p>Fill up the login form</p>
+					</div>
+					<form class="auth-form" id="auth-form">
 						<div class="form__group">
 							<label for="email">Email</label>
 							<input
@@ -30,20 +30,36 @@
 								name="email"
 								id="email"
 								placeholder="john@gmail.com"
+								title="Please enter a valid email address"
+								pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
 								required
 							/>
 						</div>
 						<div class="form__group">
 							<label for="password">Password</label>
-							<input type="password" name="password" id="password" required />
+							<div>
+								<input
+									type="password"
+									name="password"
+									id="password"
+									minlength="8"
+									pattern="^(?=.*[!@#$])(?=.*[A-Z])(?=.*[0-9]).{8,}$"
+									required
+								/>
+								<i class="bi bi-eye"></i>
+							</div>
 						</div>
+						<p id="error"></p>
 						<div class="form__submit">
 							<button type="submit" class="btn btn--primary">Login</button>
 						</div>
 					</form>
-					<p>Don't have an account? <a href="../signup/index.html">Signup</a></p>
+					<p>
+						Don't have an account? <a href="../signup/index.html">Signup</a>
+					</p>
 				</div>
 			</div>
 		</div>
+		<script type="module" src="./script.ts"></script>
 	</body>
 </html>

@@ -7,7 +7,7 @@ export const registerSchema = Joi.object({
     .min(8)
     .pattern(new RegExp("^(?=.*[!@#$])(?=.*[A-Z])(?=.*[0-9]).{8,}$"))
     .required(),
-  repeat_password: Joi.ref("password"),
+  confirmPassword: Joi.ref("password"),
   role: Joi.string().default("user"),
 });
 

@@ -1,6 +1,5 @@
+@use "./variables" as v;
+
 .error {
-	font-size: 20px;
-	padding: 10px 0;
-	text-align: center;
-	color: hsl(0, 5%, 42%);
+	color: v.$clr-danger !important;
 }

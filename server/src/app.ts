@@ -4,10 +4,12 @@ import cookieParser from "cookie-parser";
 import { errorHandler } from "./middlewares/error.middleware";
 import db from "./db";
 import logger from "./logger";
+import cors from "cors";
 
 const app = express();
 
 //middlwares
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));

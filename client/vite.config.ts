@@ -2,7 +2,7 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-	base: "/resi-review/",
+	// base: "/resi-review/",
 	build: {
 		rollupOptions: {
 			input: {

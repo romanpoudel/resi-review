@@ -22,7 +22,7 @@
 						<h1>Signup</h1>
 						<p>Create your account by filling the form below</p>
 					</div>
-					<form action="" class="auth-form">
+					<form class="auth-form" id="auth-form">
 						<div class="form__group">
 							<label for="username">Username</label>
 							<input
@@ -40,21 +40,38 @@
 								name="email"
 								id="email"
 								placeholder="john@gmail.com"
+								title="Please enter a valid email address"
+								pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
 								required
 							/>
 						</div>
 						<div class="form__group">
 							<label for="password">Password</label>
-							<input type="password" name="password" id="password" required />
+							<div>
+								<input
+									type="password"
+									name="password"
+									id="password"
+									minlength="8"
+									pattern="^(?=.*[!@#$])(?=.*[A-Z])(?=.*[0-9]).{8,}$"
+									required
+								/>
+								<i class="bi bi-eye"></i>
+							</div>
 						</div>
 						<div class="form__group">
 							<label for="confirmPassword">Confirm Password</label>
-							<input
-								type="password"
-								name="confirmPassword"
-								id="confirmPassword"
-								required
-							/>
+							<div>
+								<input
+									type="password"
+									name="confirmPassword"
+									id="confirmPassword"
+									minlength="8"
+									pattern="^(?=.*[!@#$])(?=.*[A-Z])(?=.*[0-9]).{8,}$"
+									required
+								/>
+								<i class="bi bi-eye"></i>
+							</div>
 						</div>
 						<div class="form__terms">
 							<input type="checkbox" title="checkbox" />
@@ -63,13 +80,17 @@
 								<a class="underline" href="#"> Terms &amp; Conditions </a>
 							</span>
 						</div>
+						<p id="error"></p>
 						<div class="form__submit">
 							<button type="submit" class="btn btn--primary">Signup</button>
 						</div>
 					</form>
-					<p>Already have an account? <a href="../login/index.html">Login</a></p>
+					<p>
+						Already have an account? <a href="../login/index.html">Login</a>
+					</p>
 				</div>
 			</div>
 		</div>
+		<script type="module" src="./script.ts"></script>
 	</body>
 </html>
