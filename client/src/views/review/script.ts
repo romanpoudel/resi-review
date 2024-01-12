@@ -68,5 +68,8 @@ form.addEventListener("submit", async (e) => {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	} catch (err: any) {
 		console.log(err);
+		const error = document.getElementById("error") as HTMLDivElement;
+		error.innerText = err.response.data.message;
+		error.classList.add("error");
 	}
 });

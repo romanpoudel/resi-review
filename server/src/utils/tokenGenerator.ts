@@ -4,7 +4,7 @@ import { User } from "../types/user";
 import asyncHandler from "./asyncHandler";
 import { Request, Response } from "express";
 import { ApiError } from "./ApiError";
-import  UserModel from "../models/user.model";
+import UserModel from "../models/user.model";
 import { ApiResponse } from "./ApiResponse";
 import { options } from "./cookieOption";
 
@@ -13,7 +13,7 @@ const generateAccessAndRefreshToken = (user: User) => {
     expiresIn: config.jwt.accessTokenExpiresIn,
   });
   const refreshToken = jwt.sign(
-    { username: user.username },
+    { email: user.email },
     config.jwt.refreshTokenSecret!,
     {
       expiresIn: config.jwt.refreshTokenExpiresIn,
@@ -25,7 +25,9 @@ const generateAccessAndRefreshToken = (user: User) => {
 export const refreshAccessToken = asyncHandler(
   async (req: Request, res: Response) => {
     const incomingRefreshToken =
-      req.cookies.refreshToken || req.body.refreshToken;
+      req.headers.authorization ||
+      req.cookies.refreshToken ||
+      req.body.refreshToken;
     if (!incomingRefreshToken) {
       throw new ApiError(401, "Unauthorized Request");
     }
@@ -34,19 +36,20 @@ export const refreshAccessToken = asyncHandler(
         incomingRefreshToken,
         config.jwt.refreshTokenSecret!
       ) as jwt.JwtPayload;
-      
+
       if (!decodedToken || !decodedToken.exp) {
         throw new ApiError(401, "Refresh token has expired");
       }
-      const user =await UserModel.getByUsername(decodedToken.username);
+      const user = await UserModel.getByEmail(decodedToken?.email);
       if (!user) {
         throw new ApiError(401, "Invalid refresh token");
       }
       if (user.refreshToken !== incomingRefreshToken) {
         throw new ApiError(401, "Invalid refresh token");
       }
-      const { accessToken, refreshToken } =
-        generateAccessAndRefreshToken(user);
+      const { accessToken, refreshToken } = generateAccessAndRefreshToken(user);
+
+      await UserModel.updateRefreshToken(user.username, refreshToken);
 
       res
         .status(200)
@@ -60,10 +63,12 @@ export const refreshAccessToken = asyncHandler(
           )
         );
     } catch (error: unknown) {
-      throw new ApiError(401, (error as Error)?.message || "Invalid refresh token");
+      throw new ApiError(
+        401,
+        (error as Error)?.message || "Invalid refresh token"
+      );
     }
   }
 );
-
 
 export default generateAccessAndRefreshToken;

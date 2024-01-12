@@ -36,6 +36,10 @@ export default class UserModel {
     return db("users").where({ username }).del();
   }
 
+  static async updateRefreshToken(username: string, refreshToken: string) {
+    return db("users").where({ username }).update({ refreshToken });
+  }
+
   static async clearRefreshToken(username: string) {
     return db("users").where({ username }).update({ refreshToken: null });
   }

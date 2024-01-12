@@ -20,7 +20,7 @@ export const registerUser = asyncHandler(
 );
 
 export const loginUser = asyncHandler(async (req: Request, res: Response) => {
-  const { error, value } = loginSchema.validate(req.body);
+  const { error ,value} = loginSchema.validate(req.body);
   if (error) {
     throw new ApiError(400, error.message);
   }
