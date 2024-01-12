@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<link rel="stylesheet" href="../../styles/main.scss" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="module" src="../../utils/auth.ts"></script>
+		<title>Write &bullet; Resi-Review</title>
+	</head>
+	<body>
+		<header class="container header">
+			<logo-component></logo-component>
+			<div class="header__loggedin">
+				<div>
+					<avatar-component></avatar-component>
+				</div>
+			</div>
+		</header>
+		<main class="container">
+			<form class="review-form" id="review-form">
+				<div class="review-form__header">
+					<h2>House Review Form</h2>
+					<p>
+						Please fill out the form below to provide feedback on the house
+						rental listing.
+					</p>
+				</div>
+				<div class="review-form__body">
+					<div class="review-form__group">
+						<label for="house-number">House Number<span>*</span></label>
+						<input
+							type="text"
+							id="house-number"
+							placeholder="Enter the house number"
+							required
+						/>
+					</div>
+					<div class="review-form__group">
+						<label for="house-image">House Image<span>*</span></label>
+						<input
+							type="file"
+							id="house-image"
+							accept=".jpg, .jpeg, .png"
+							required
+						/>
+					</div>
+					<div class="review-form__group">
+						<label for="house-location">Location<span>*</span></label>
+						<input
+							type="text"
+							id="house-location"
+							placeholder="Enter the location"
+							required
+						/>
+					</div>
+					<div class="review-form__group">
+						<label for="location-image">Location Image</label>
+						<input
+							type="file"
+							id="location-image"
+							accept=".jpg, .jpeg, .png"
+						/>
+					</div>
+					<div class="review-form__group">
+						<label for="house-guidlines"
+							>Guidelines or Rules of the House</label
+						>
+						<textarea
+							type="text"
+							id="house-guidlines"
+							placeholder="Enter the guidlines or rules of the house"
+							rows="8"
+						></textarea>
+					</div>
+					<div class="review-form__group">
+						<label for="house-price">Price</label>
+						<input id="house-price" placeholder="Enter the price" type="number"/>
+					</div>
+					<div class="review-form__group">
+						<label for="house-category">Category<span>*</span></label>
+						<select
+							class="reviews__top--sort dropdown"
+							id="house-category"
+							title="category"
+							required
+						>
+							<option value="" disabled>Select category</option>
+							<option value="room" selected>Room</option>
+							<option value="flat">Flat</option>
+							<option value="house">House</option>
+						</select>
+					</div>
+					<div class="review-form__group">
+						<label for="facilities">Facilities</label>
+						<div class="facilities">
+							<div class="facilities--item">
+								<input type="checkbox" id="water" />
+								<label for="water">24 hrs water supply</label>
+							</div>
+							<div class="facilities--item">
+								<input type="checkbox" id="furniture" />
+								<label for="furniture">Furniture</label>
+							</div>
+							<div class="facilities--item">
+								<input type="checkbox" id="parking" />
+								<label for="parking">Parking</label>
+							</div>
+							<div class="facilities--item">
+								<input type="checkbox" id="wifi" />
+								<label for="wifi">Wi-Fi</label>
+							</div>
+							<div class="facilities--item">
+								<input type="checkbox" id="open-24-7" />
+								<label for="open-24-7">24/7 access </label>
+							</div>
+							<div class="facilities--item">
+								<input type="checkbox" id="washroom" />
+								<label for="washroom">Separate washroom</label>
+							</div>
+							<div class="facilities--item">
+								<input type="checkbox" id="rooftop" />
+								<label for="rooftop">Rooftop Access</label>
+							</div>
+							<div class="facilities--item">
+								<input type="checkbox" id="security" />
+								<label for="security">Rooftop Access</label>
+							</div>
+						</div>
+					</div>
+					<div class="review-form__group">
+						<label for="house-contact">Contact</label>
+						<input
+							type="tel"
+							id="house-contact"
+							placeholder="Enter the phone number"
+						/>
+					</div>
+					<div class="review-form__group">
+						<button type="submit" class="btn btn--primary">Submit</button>
+					</div>
+				</div>
+			</form>
+		</main>
+		<footer-component></footer-component>
+		<script type="module" defer src="./script.ts"></script>
+		<script type="module" defer src="../../components/Footer.ts"></script>
+		<script type="module" defer src="../../components/Logo.ts"></script>
+		<script type="module" defer src="../../components/Avatar.ts"></script>
+	</body>
+</html>

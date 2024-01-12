@@ -11,7 +11,7 @@
   @include a.flex(column, center, space-between);
   gap: a.rem(8);
   @include a.breakpoint(medium) {
-    @include a.flex(row, flex-start);
+    @include a.flex(row, flex-start, space-between);
     gap: a.rem(10);
   }
   a{

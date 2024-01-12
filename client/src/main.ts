@@ -18,14 +18,13 @@ avatar.setAttribute("src", src);
 
 try {
 	const response = await api(requestOptions);
-	console.log("hey", response);
 	if (response.status === 200) {
-		header_right.style.display = "flex";
-		header_loggedin.style.display = "none";
+		header_right.style.display = "none";
+		header_loggedin.style.display = "flex";
+		avatar.setAttribute("title", response.data.data.username);
 	}
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 } catch (err: any) {
-	console.log(err);
-	header_right.style.display = "none";
-	header_loggedin.style.display = "flex";
+	header_right.style.display = "flex";
+	header_loggedin.style.display = "none";
 }

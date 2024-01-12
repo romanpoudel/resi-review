@@ -1,0 +1,95 @@
+@use "../abstracts" as a;
+
+.review-form {
+	@include a.flex(column, center);
+}
+
+.review-form {
+	&__header {
+		width: 100%;
+		@include a.flex(column, center);
+		margin-bottom: 2rem;
+		h2 {
+			color: a.$clr-primary;
+			margin-bottom: 0;
+		}
+		p {
+			text-align: center;
+			color: a.$clr-light-gray;
+		}
+	}
+	&__body {
+		width: 100%;
+		max-width: 400px;
+		@include a.flex(column, flex-start);
+		gap: a.rem(15);
+		@include a.breakpoint(medium) {
+			max-width: 600px;
+      font-size: a.$text-base;
+		}
+	}
+	&__group {
+		width: 100%;
+		@include a.flex(column, flex-start);
+		gap: a.rem(8);
+		input {
+			width: 100%;
+			height: auto;
+      padding: a.rem(8) a.rem(6);
+			@include a.breakpoint(large) {
+				&::placeholder {
+					font-size: a.$text-lg;
+				}
+        padding: a.rem(8) a.rem(10);
+			}
+		}
+		textarea {
+			width: 100%;
+		}
+		select {
+			width: 100%;
+			padding: a.rem(4) a.rem(6);
+			height: a.rem(35);
+			border-radius: a.rem(6);
+			border: a.rem(2) solid a.$clr-gray;
+			&:focus-visible {
+				outline: none;
+				box-shadow: 0 0 0 a.rem(2) a.$clr-primary;
+				border: none;
+			}
+			option {
+				background-color: a.$clr-primary-ultra-light;
+			}
+		}
+		button {
+			width: 100%;
+			padding-block: a.rem(10);
+      margin-top: a.rem(15);
+		}
+		span{
+			color: a.$clr-danger;
+		}
+	}
+}
+
+.facilities {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: 100%;
+	gap: a.rem(10);
+	&--item {
+		@include a.flex(row, center);
+		gap: a.rem(10);
+		input {
+			width: auto;
+		}
+		label {
+			white-space: nowrap;
+			@include a.breakpoint(medium) {
+				font-size: a.$text-base;
+			}
+			height: auto;
+			
+		}
+	}
+}

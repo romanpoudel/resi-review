@@ -18,6 +18,19 @@
 			white-space: nowrap;
 			color: a.$clr-warning;
 		}
+		&--title{
+			p{
+				font-size: a.$text-xs;
+				color: a.$clr-light-gray;
+			}
+			span{
+				color: a.$clr-danger;
+			}
+			a{
+				color: a.$clr-primary;
+				font-weight: a.$font-semibold;
+			}
+		}
 	}
 	&__estimate {
 		border: a.rem(1) solid a.$clr-light-gray;

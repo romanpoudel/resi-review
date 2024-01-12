@@ -10,30 +10,30 @@
 	&--right {
 		@include a.flex();
 		gap: a.rem(10);
-    font-weight: a.$font-semibold;
-    @include a.breakpoint(large) {
-      font-size: a.$text-sm;
-    }
+		font-weight: a.$font-semibold;
+		@include a.breakpoint(large) {
+			font-size: a.$text-sm;
+		}
 	}
 	&__star {
 		@include a.flex();
 		gap: a.rem(5);
-    i{
-      color: a.$clr-warning;
-    }
+		i {
+			color: a.$clr-warning;
+		}
 	}
 	&__author {
 		font-weight: a.$font-extrabold;
-    @include a.breakpoint(large) {
-      font-size: a.$text-sm;
-    }
+		@include a.breakpoint(large) {
+			font-size: a.$text-sm;
+		}
 	}
 	&__timestamp {
 		color: a.$clr-gray;
 	}
 	&__header {
-		@include a.flex(row,center);
-    margin-bottom: a.rem(4);
+		@include a.flex(row, center);
+		margin-bottom: a.rem(4);
 		h4 {
 			margin: 0;
 		}
@@ -52,22 +52,22 @@
 		}
 	}
 	&__likes {
-		@include a.flex(row,center);
+		@include a.flex(row, center);
 		gap: a.rem(8);
 		color: a.$clr-primary;
 		font-weight: a.$font-semibold;
-    font-size: a.$text-sm;
+		font-size: a.$text-sm;
 	}
-  
+
 	&__bottom {
-		@include a.flex(row,center);
+		@include a.flex(row, center);
 	}
 	&__text {
 		font-family: "Lato", sans-serif;
 		font-size: a.$text-sm;
 		color: a.$clr-gray;
-    line-height: 1.5;
-    letter-spacing: 0.2px;
+		line-height: 1.5;
+		letter-spacing: 0.2px;
 		span {
 			font-weight: a.$font-semibold;
 			color: a.$clr-primary;

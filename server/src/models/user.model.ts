@@ -1,5 +1,4 @@
 import knex from "knex";
-// import db from "../db";
 import { User } from "../types/user";
 import db from "../db";
 import { ApiError } from "../utils/ApiError";
