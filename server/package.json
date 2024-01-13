@@ -23,6 +23,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.5",
+    "@types/multer": "^1.4.11",
     "@types/node": "^20.10.6",
     "@types/to-snake-case": "^1.0.2",
     "@types/typescript": "^2.0.0",
@@ -37,6 +38,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "camelize": "^1.0.1",
+    "cloudinary": "^1.41.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

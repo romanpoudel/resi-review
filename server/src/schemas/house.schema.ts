@@ -13,7 +13,7 @@ const facilities = Joi.object({
 
 export const houseSchema = Joi.object({
   housenumber: Joi.string().trim().min(4).required(),
-  houseimage: Joi.string().trim().required(),
+  houseimage: Joi.string().required(),
   location: Joi.string().trim().min(3).message("Enter a valid location").required(),
   locationimage: Joi.string().optional().allow(""),
   guidelines: Joi.string().trim().optional().allow(""),

@@ -55,8 +55,11 @@ form.addEventListener("submit", async (e) => {
 	console.log( data);
 	const requestOptions = {
 		method: "POST",
-		url: "/users/create-review",
+		url: "/create-review",
 		data: data,
+		headers: {
+			"Content-Type": "multipart/form-data",
+		},
 	};
 	try {
 		const response = await api(requestOptions);
