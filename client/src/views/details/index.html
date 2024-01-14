@@ -86,9 +86,15 @@
 							placeholder="Review"
 						></textarea>
 					</div>
-					<div class="form__agree">
-						<input type="checkbox" id="owner" placeholder="Owner" />
-						<p>I'm the owner of the property.</p>
+					<div class="form__options">
+						<div class="form__options--item">
+							<input type="checkbox" id="anomymous">
+							<label for="anomymous">Anonymous</label>
+						</div>
+						<div class="form__options--item">
+							<input type="checkbox" id="owner">
+							<label for="owner">I'm the owner of the property.</label>
+						</div>
 					</div>
 					<div class="form__submit">
 						<button type="submit" class="btn btn--primary">Add review</button>
@@ -115,6 +121,7 @@
 			</div>
 		</main>
 		<footer-component></footer-component>
+		<script type="module" defer src="./script.ts"></script>
 		<script type="module" defer src="../../components/Logo.ts"></script>
 		<script type="module" defer src="../../components/Search.ts"></script>
 		<script type="module" defer src="../../components/Rating.ts"></script>

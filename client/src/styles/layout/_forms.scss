@@ -52,11 +52,17 @@
 	&__textarea {
 		font-size: a.$text-sm;
 	}
-	&__agree {
-		@include a.flex(row, center);
-		gap: a.rem(10);
+	&__options {
+		@include a.flex(column, flex-start);
+		// gap: a.rem(10);
 		margin-bottom: a.rem(30);
 		margin-top: a.rem(20);
+		font-size: a.$text-sm;
+		font-weight: a.$font-bold;
+		&--item{
+			@include a.flex(row,center);
+			gap: a.rem(10);
+		}
 	}
 	&__submit {
 		width: 100%;
