@@ -55,25 +55,37 @@
 					<div class="form__header">
 						<div class="form__header--title">
 							<h3>Add Review</h3>
-							<p>Note<span>*</span>: <a href="../login/index.html">Login</a> to review</p>
+							<p>
+								Note<span>*</span>: <a href="../login/index.html">Login</a> to
+								review
+							</p>
 						</div>
 						<div class="form__header--rate">
-							<i class="bi bi-star"></i>
-							<i class="bi bi-star"></i>
-							<i class="bi bi-star"></i>
-							<i class="bi bi-star"></i>
-							<i class="bi bi-star"></i>
+							<div class="star-wrapper">
+								<input type="radio" name="rating" id="star-1" />
+								<label for="star-1" class="star"></label>
+								<input type="radio" name="rating" id="star-2" />
+								<label for="star-2" class="star"></label>
+								<input type="radio" name="rating" id="star-3" />
+								<label for="star-3" class="star"></label>
+								<input type="radio" name="rating" id="star-4" />
+								<label for="star-4" class="star"></label>
+								<input type="radio" name="rating" id="star-5" />
+								<label for="star-5" class="star"></label>
+							</div>
 						</div>
 					</div>
 					<div class="form__estimate">
 						<div class="form__estimate--title">
 							<p>Social Estimation:</p>
-							<p>$239.000*</p>
+							<p id="estimate-value">$239.000*</p>
 						</div>
 						<input
 							type="range"
 							name="estimate"
 							id="estimate"
+							min="2000"
+							max="1000000"
 							placeholder="Estimate"
 						/>
 					</div>
@@ -88,14 +100,15 @@
 					</div>
 					<div class="form__options">
 						<div class="form__options--item">
-							<input type="checkbox" id="anomymous">
+							<input type="checkbox" id="anomymous" />
 							<label for="anomymous">Anonymous</label>
 						</div>
 						<div class="form__options--item">
-							<input type="checkbox" id="owner">
+							<input type="checkbox" id="owner" />
 							<label for="owner">I'm the owner of the property.</label>
 						</div>
 					</div>
+					<p class="error"></p>
 					<div class="form__submit">
 						<button type="submit" class="btn btn--primary">Add review</button>
 					</div>

@@ -1,0 +1,25 @@
+@use "../abstracts" as a;
+
+.star-wrapper {
+  display: flex;
+  justify-content: space-between;
+  direction: rtl;
+}
+
+.star-wrapper input[type="radio"] {
+  display: none;
+}
+
+.star-wrapper label {
+  font-size: a.$text-3xl;
+  cursor: pointer;
+}
+
+.star-wrapper label:before {
+  content: "\2605";
+  color: #ccc;
+}
+
+.star-wrapper input[type="radio"]:checked ~ label:before {
+  color: a.$clr-warning;
+}

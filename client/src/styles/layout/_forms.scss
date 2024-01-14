@@ -33,7 +33,7 @@
 		}
 	}
 	&__estimate {
-		border: a.rem(1) solid a.$clr-light-gray;
+		border: a.rem(1) solid a.$clr-primary;
 		border-radius: a.rem(4);
 		padding: a.rem(15) a.rem(10);
 		margin-bottom: a.rem(30);
@@ -54,7 +54,6 @@
 	}
 	&__options {
 		@include a.flex(column, flex-start);
-		// gap: a.rem(10);
 		margin-bottom: a.rem(30);
 		margin-top: a.rem(20);
 		font-size: a.$text-sm;
@@ -98,6 +97,22 @@
 		@include a.flex(row, center, flex-start);
 		gap: a.rem(10);
 		font-size: a.$text-sm;
+	}
+}
+
+#estimate-value{
+	font-family: "Open Sans", sans-serif;
+	color: a.$clr-primary-dark;
+	font-weight: a.$font-bold;
+	font-size: a.$text-sm;
+	@include a.breakpoint(small) {
+		font-size: a.$text-base;
+	}
+	@include a.breakpoint(medium) {
+		font-size: a.$text-lg;
+	}
+	@include a.breakpoint(large) {
+		font-size: a.$text-xl;
 	}
 }
 

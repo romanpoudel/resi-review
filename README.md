@@ -27,7 +27,7 @@ A simple frontend design to see how the frontend looks like
 
 Install my-project with npm
 
-clone the project with `https://github.com/romanpoudel/resi-review.git `
+clone the project with `https://github.com/romanpoudel/resi-review.git`
 
 ```bash
   cd client for frontend / cd server for backend
