@@ -1,6 +1,7 @@
 import { Knex } from "knex";
 
-const TABLE_NAME = "houses";
+const TABLE_NAME = "users";
+
 
 /**
  * Create table TABLE_NAME.
@@ -10,12 +11,13 @@ const TABLE_NAME = "houses";
  */
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable(TABLE_NAME, (table) => {
-    table.bigInteger("house_id").primary().notNullable();
-    table.string("location").notNullable();
+    table.increments("id").primary();
+    table.string("username").notNullable();
+    table.string("email").notNullable();
+    table.string("password").notNullable();
+    table.string("refresh_token").nullable();
+    table.enu("role", ["user", "owner","both"]).defaultTo("user");
     table.string("image_url").nullable();
-    table.bigInteger("rating").notNullable();
-    table.string("price").notNullable();
-    table.string("contact").nullable();
     table.timestamps(true, true);
   });
 }

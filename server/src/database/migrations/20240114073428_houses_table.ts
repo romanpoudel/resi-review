@@ -1,6 +1,7 @@
 import { Knex } from "knex";
 
-const TABLE_NAME = "users";
+const TABLE_NAME = "houses";
+
 
 /**
  * Create table TABLE_NAME.
@@ -10,13 +11,15 @@ const TABLE_NAME = "users";
  */
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable(TABLE_NAME, (table) => {
-    table.increments("user_id").primary();
-    table.string("username").notNullable();
-    table.string("email").notNullable();
-    table.string("password").notNullable();
-    table.string("refresh_token").nullable();
-    table.enu("role", ["user", "owner"]).defaultTo("user");
-    table.string("image_url").nullable();
+    table.increments("id").primary();
+    table.string("housenumber").notNullable();
+    table.string("houseimage").notNullable();
+    table.string("location").notNullable();
+    table.string("locationimage").nullable();
+    table.bigInteger("rating").nullable();
+    table.string("price").nullable();
+    table.string("contact").nullable();
+    table.enu("category", ["room", "flat","house"]).defaultTo("room");
     table.timestamps(true, true);
   });
 }

@@ -1,8 +1,8 @@
 import { ParamsDictionary } from "express-serve-static-core";
 import { ParsedQs } from "qs";
-import { User } from "../types/user";
+import { TUser } from "../types/user";
 import { Request } from "express";
-export interface RequestWithUser
+export interface IRequestWithUser
   extends Request<ParamsDictionary, unknown, unknown, ParsedQs> {
-  user?: User;
+  user?: TUser;
 }

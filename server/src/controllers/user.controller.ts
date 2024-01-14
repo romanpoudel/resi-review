@@ -2,10 +2,10 @@ import { Response } from "express";
 import asyncHandler from "../utils/asyncHandler";
 // import { ApiError } from "../utils/ApiError";
 import { ApiResponse } from "../utils/ApiResponse";
-import { RequestWithUser } from "../interfaces/requestUser";
+import { IRequestWithUser } from "../interfaces/requestUser";
 
 export const loggedInUser = asyncHandler(
-  async (req: RequestWithUser, res: Response) => {
+  async (req: IRequestWithUser, res: Response) => {
     res.json(
       new ApiResponse(
         200,

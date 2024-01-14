@@ -4,10 +4,10 @@ import jwt from "jsonwebtoken";
 import config from "../config";
 import UserModel from "../models/user.model";
 import { NextFunction, Response } from "express";
-import { RequestWithUser } from "../interfaces/requestUser";
+import { IRequestWithUser } from "../interfaces/requestUser";
 
 export const verifyJWT = asyncHandler(
-  async (req: RequestWithUser, _res:Response, next: NextFunction) => {
+  async (req: IRequestWithUser, _res:Response, next: NextFunction) => {
     const token =
       req.cookies?.accessToken ||
       req.header("Authorization")?.replace("Bearer ", "");

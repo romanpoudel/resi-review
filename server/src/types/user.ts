@@ -1,4 +1,4 @@
-type User = {
+type TUser = {
   user_id?: number;
   username: string;
   email: string;
@@ -8,4 +8,4 @@ type User = {
   image_url?: string;
 };
 
-export { User };
+export { TUser };

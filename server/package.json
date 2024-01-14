@@ -11,7 +11,8 @@
     "migrate": "knex --knexfile=src/knexFile.ts migrate:latest --verbose",
     "rollback": "knex --knexfile=src/knexFile.ts migrate:rollback --verbose",
     "make:seeder": "knex --knexfile=src/knexFile.ts seed:make",
-    "seed": "knex --knexfile=src/knexFile.ts seed:run --verbose"
+    "seed": "knex --knexfile=src/knexFile.ts seed:run --verbose",
+    "migration:status": "knex --knexfile=src/knexFile.ts migrate:status"
   },
   "keywords": [],
   "author": "Roman Poudel",

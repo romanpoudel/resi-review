@@ -11,12 +11,14 @@ export async function seed(knex: Knex): Promise<void> {
     .then(() => {
       return knex(TABLE_NAME).insert([
         {
-          colName: 'rowValue',
-          colName2: 'rowValue'
+          housenumber: 'wer324',
+          houseimage: 'http://w3dsf.com',
+          location:'kathmandu',
         },
         {
-          colName: 'rowValue',
-          colName2: 'rowValue'
+          housenumber: 'sdfsaf54',
+          houseimage: 'http://w3dsf.com',
+          location:'kathmandu',
         }
       ]);
     });

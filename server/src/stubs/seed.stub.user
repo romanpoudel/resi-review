@@ -17,29 +17,13 @@ export async function seed(knex: Knex): Promise<void> {
           username: 'roman',
           email: 'roman@gmail.com',
           password: 'rowValue@123',
-          refresh_token: '',
-          image_url: 'rowValue'
+          refresh_token: ''
         },
         {
           username: 'rojan',
-          email: 'rowValue',
-          password: 'rowValue',
-          refresh_token: 'rowValue',
-          image_url: 'rowValue'
-        },
-        {
-          username: 'lukaku',
-          email: 'rowValue',
-          password: 'rowValue',
-          refresh_token: 'rowValue',
-          image_url: 'rowValue'
-        },
-        {
-          username: 'rowValue',
-          email: 'rowValue',
-          password: 'rowValue',
-          refresh_token: 'rowValue',
-          image_url: 'rowValue'
+          email: 'roajn@gmail.com',
+          password: 'rowValue@234',
+          refresh_token: ''
         }
       ]);
     });

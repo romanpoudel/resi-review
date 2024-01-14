@@ -1,6 +1,6 @@
 import { Knex } from "knex";
 
-const TABLE_NAME = "users";
+const TABLE_NAME = "guidlines";
 
 
 /**
@@ -12,13 +12,8 @@ const TABLE_NAME = "users";
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable(TABLE_NAME, (table) => {
     table.increments("id").primary();
-    table.string("username").notNullable();
-    table.string("email").notNullable();
-    table.string("password").notNullable();
-    table.string("refresh_token").nullable();
-    table.enu("role", ["user", "owner","both"]).defaultTo("user");
-    table.string("image_url").nullable();
-    table.timestamps(true, true);
+    table.integer("house_id").unsigned().references("id").inTable("houses").onDelete("CASCADE").notNullable();
+    table.string("rule").notNullable();
   });
 }
 

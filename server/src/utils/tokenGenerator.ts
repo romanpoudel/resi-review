@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import config from "../config";
-import { User } from "../types/user";
+import { TUser } from "../types/user";
 import asyncHandler from "./asyncHandler";
 import { Request, Response } from "express";
 import { ApiError } from "./ApiError";
@@ -8,7 +8,7 @@ import UserModel from "../models/user.model";
 import { ApiResponse } from "./ApiResponse";
 import { options } from "./cookieOption";
 
-const generateAccessAndRefreshToken = (user: User) => {
+const generateAccessAndRefreshToken = (user: TUser) => {
   const accessToken = jwt.sign(user, config.jwt.accessTokenSecret!, {
     expiresIn: config.jwt.accessTokenExpiresIn,
   });

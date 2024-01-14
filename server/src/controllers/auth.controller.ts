@@ -4,7 +4,7 @@ import * as authService from "../services/auth.services";
 import { ApiResponse } from "../utils/ApiResponse";
 import { registerSchema, loginSchema } from "../schemas/user.schema";
 import { ApiError } from "../utils/ApiError";
-import { RequestWithUser } from "../interfaces/requestUser";
+import { IRequestWithUser } from "../interfaces/requestUser";
 import { options } from "../utils/cookieOption";
 
 export const registerUser = asyncHandler(
@@ -33,7 +33,7 @@ export const loginUser = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const logoutUser = asyncHandler(
-  async (req: RequestWithUser, res: Response) => {
+  async (req: IRequestWithUser, res: Response) => {
     if (req.user) {
       await authService.logoutUser(req.user.username);
     }

@@ -1,12 +1,12 @@
 import bcrypt from "bcrypt";
-import { User } from "../types/user";
+import { TUser } from "../types/user";
 import UserModel from "../models/user.model";
 import { ApiError } from "../utils/ApiError";
 import generateAccessAndRefreshToken from "../utils/tokenGenerator";
 
 const SALT_ROUNDS = 10;
 
-export const registerUser = async (body: User) => {
+export const registerUser = async (body: TUser) => {
   const hashedPassword = await bcrypt.hash(body.password, SALT_ROUNDS);
   const userExists =
     (await UserModel.getByEmail(body.email)) ||
@@ -25,7 +25,7 @@ export const registerUser = async (body: User) => {
   return user;
 };
 
-export const loginUser = async (body: User) => {
+export const loginUser = async (body: TUser) => {
   const { accessToken, refreshToken } = generateAccessAndRefreshToken(body);
   const user = await UserModel.getByEmail(body.email);
   if (!user) {

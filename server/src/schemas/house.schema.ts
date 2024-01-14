@@ -19,7 +19,6 @@ export const houseSchema = Joi.object({
   guidelines: Joi.string().trim().optional().allow(""),
   price: Joi.number().optional().allow(""),
   category: Joi.string().valid("room", "flat", "house").required(),
-  //multiple checkbox inputs
   contact: Joi.string().trim().min(9).max(20).optional().allow(""),
   facilities: facilities,
 });

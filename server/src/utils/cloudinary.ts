@@ -18,6 +18,8 @@ export const uploadOnCloudinary = async (localFilePath: string) => {
     const response = await cloudinary.uploader.upload(localFilePath, {
       resource_type: "image",
     });
+    //remove file from temp storage in public folder
+    fs.unlinkSync(localFilePath);
     return response;
   } catch (err) {
     logger.error(err);
