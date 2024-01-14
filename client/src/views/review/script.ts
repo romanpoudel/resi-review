@@ -5,74 +5,111 @@ const src =
 const avatar = document.querySelector("avatar-component") as HTMLElement;
 avatar.setAttribute("src", src);
 
-//form data
-const housenumber = document.getElementById("house-number") as HTMLInputElement;
-const houseimage = document.getElementById("house-image") as HTMLInputElement;
-const location = document.getElementById("house-location") as HTMLInputElement;
-const locationimage = document.getElementById(
-	"location-image"
-) as HTMLInputElement;
-const guidelines = document.getElementById(
-	"house-guidlines"
-) as HTMLTextAreaElement;
-const price = document.getElementById("house-price") as HTMLInputElement;
-const category = document.getElementById("house-category") as HTMLInputElement;
-//individual facility
-const wifi = document.getElementById("wifi") as HTMLInputElement;
-const water = document.getElementById("water") as HTMLInputElement;
-const security = document.getElementById("security") as HTMLInputElement;
-const parking = document.getElementById("parking") as HTMLInputElement;
-const furniture = document.getElementById("furniture") as HTMLInputElement;
-const open247 = document.getElementById("open-24-7") as HTMLInputElement;
-const separatewashroom = document.getElementById("washroom") as HTMLInputElement;
-const rooftopaccess = document.getElementById("rooftop") as HTMLInputElement;
-
-const contact = document.getElementById("house-contact") as HTMLInputElement;
 const form = document.getElementById("review-form") as HTMLFormElement;
 
 form.addEventListener("submit", async (e) => {
 	e.preventDefault();
-	const data = {
-		housenumber: housenumber.value.trim(),
-		houseimage: houseimage.value,
-		location: location.value.trim(),
-		locationimage: locationimage.value,
-		guidelines: guidelines.value.trim(),
-		price: Number(price.value.trim()),
-		category: category.value.trim(),
-		facilities: {
-			wifi: wifi.checked,
-			water: water.checked,
-			security: security.checked,
-			parking: parking.checked,
-			furniture: furniture.checked,
-			open247: open247.checked,
-			separatewashroom: separatewashroom.checked,
-			rooftopaccess: rooftopaccess.checked,
-		},
-		contact: contact.value.trim(),
-	};
-	console.log( data);
+
+	const formData = new FormData();
+
+	// Append text fields to FormData
+	formData.append(
+		"housenumber",
+		(document.getElementById("house-number") as HTMLInputElement).value.trim()
+	);
+	formData.append(
+		"location",
+		(document.getElementById("house-location") as HTMLInputElement).value.trim()
+	);
+	formData.append(
+		"guidelines",
+		(
+			document.getElementById("house-guidlines") as HTMLTextAreaElement
+		).value.trim()
+	);
+	formData.append(
+		"price",
+		(document.getElementById("house-price") as HTMLInputElement).value.trim()
+	);
+	formData.append(
+		"category",
+		(document.getElementById("house-category") as HTMLInputElement).value.trim()
+	);
+	formData.append(
+		"contact",
+		(document.getElementById("house-contact") as HTMLInputElement).value.trim()
+	);
+
+	// Append file fields to FormData
+	const houseImageInput = document.getElementById(
+		"house-image"
+	) as HTMLInputElement;
+	const locationImageInput = document.getElementById(
+		"location-image"
+	) as HTMLInputElement;
+
+	formData.append("houseimage", houseImageInput?.files?.[0] || "");
+
+	formData.append("locationimage", locationImageInput?.files?.[0] || "");
+
+	// Append checkbox values to FormData
+	formData.append(
+		"facilities[wifi]",
+		(document.getElementById("wifi") as HTMLInputElement).checked.toString()
+	);
+	formData.append(
+		"facilities[water]",
+		(document.getElementById("water") as HTMLInputElement).checked.toString()
+	);
+	formData.append(
+		"facilities[security]",
+		(document.getElementById("security") as HTMLInputElement).checked.toString()
+	);
+	formData.append(
+		"facilities[parking]",
+		(document.getElementById("parking") as HTMLInputElement).checked.toString()
+	);
+	formData.append(
+		"facilities[furniture]",
+		(
+			document.getElementById("furniture") as HTMLInputElement
+		).checked.toString()
+	);
+	formData.append(
+		"facilities[open247]",
+		(
+			document.getElementById("open-24-7") as HTMLInputElement
+		).checked.toString()
+	);
+	formData.append(
+		"facilities[separatewashroom]",
+		(document.getElementById("washroom") as HTMLInputElement).checked.toString()
+	);
+	formData.append(
+		"facilities[sunlight]",
+		(document.getElementById("sunlight") as HTMLInputElement).checked.toString()
+	);
+
 	const requestOptions = {
 		method: "POST",
 		url: "/create-review",
-		data: data,
+		data: formData,
 		headers: {
 			"Content-Type": "multipart/form-data",
 		},
 	};
+
 	try {
 		const response = await api(requestOptions);
 		console.log(response);
-		if (response.status === 200) {
+		if (response.status === 201) {
 			window.location.href = "/";
 			console.log(response.data.data);
 		}
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	} catch (err: any) {
-		console.log(err);
 		const error = document.getElementById("error") as HTMLDivElement;
-		error.innerText = err.response.data.message;
+		error.innerText = err.response?.data?.message || "An error occurred.";
 		error.classList.add("error");
 	}
 });

@@ -8,7 +8,7 @@ const facilities = Joi.object({
   furniture: Joi.boolean(),
   open247: Joi.boolean(),
   separatewashroom: Joi.boolean(),
-  rooftopaccess: Joi.boolean(),
+  sunlight: Joi.boolean(),
 });
 
 export const houseSchema = Joi.object({

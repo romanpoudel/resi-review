@@ -4,13 +4,14 @@ import { houseSchema } from "../schemas/house.schema";
 import { ApiError } from "../utils/ApiError";
 import { uploadOnCloudinary } from "../utils/cloudinary";
 import * as reviewService from "../services/review.services";
+import { ApiResponse } from "../utils/ApiResponse";
 
 export const writeReview = asyncHandler(async (req: Request, res: Response) => {
-  const houseimageLocalpath = (
+  const houseimageLocalpath =await (
     req.files as { [fieldname: string]: Express.Multer.File[] }
   ).houseimage?.[0]?.path;
 
-  const locationimageLocalpath = (
+  const locationimageLocalpath = await(
     req.files as { [fieldname: string]: Express.Multer.File[] }
   ).locationimage?.[0]?.path;
 
@@ -36,5 +37,5 @@ export const writeReview = asyncHandler(async (req: Request, res: Response) => {
     locationimage: locationimageResponse?.url,
   };
   await reviewService.writeReview(housedata);
-  res.status(201).json({ value: housedata });
+  res.status(201).json(new ApiResponse(201, null, "Review added successfully"));
 });
