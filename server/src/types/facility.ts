@@ -1,4 +1,4 @@
-type facility = {
+type TFacility = {
   wifi?: boolean;
   water?: boolean;
   sunlight?: boolean;
@@ -9,4 +9,4 @@ type facility = {
   security?: boolean;
 };
 
-export { facility };
+export { TFacility };

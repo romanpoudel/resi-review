@@ -1,5 +1,5 @@
 import db from "../db";
-import { review } from "../types/review";
+import { TReviewDB } from "../types/review";
 import { ApiError } from "../utils/ApiError";
 
 
@@ -8,11 +8,12 @@ export default class ReviewModel {
     return db("reviews").select("*");
   }
 
-  static async addReview(review:review) {
+  static async addReview(review:TReviewDB) {
     try {
-      const result = await db("houses").returning("*").insert(review);
+      const result = await db("reviews").insert(review).returning("*");
       return result;
     } catch (err) {
+      console.log(err);
       throw new ApiError(
         400,
         "Database error. Error updating reviews. Please check your input and try again"

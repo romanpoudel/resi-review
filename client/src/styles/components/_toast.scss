@@ -1,0 +1,30 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/variables" as v;
+
+#toast-container {
+  position: fixed;
+  top: f.rem(10);
+  right: f.rem(10);
+  max-width: f.rem(300);
+  z-index: 12;
+}
+
+.toast {
+  background-color: v.$clr-success;
+  color: v.$clr-white;
+  padding: f.rem(16);
+  margin: f.rem(8) 0;
+  border-radius: f.rem(5);
+  transition: opacity 0.6s;
+  // opacity: 0;
+}
+
+.toast-success {
+  background-color: v.$clr-success;
+  color: v.$clr-white;
+}
+
+.toast-error {
+  background-color: v.$clr-danger;
+  color: v.$clr-white;
+}

@@ -1,14 +1,14 @@
 import db from "../db";
 import { ApiError } from "../utils/ApiError";
 import logger from "../logger";
-import { facility } from "../types/facility";
+import { TFacility } from "../types/facility";
 
 export default class FacilityModel {
   static async getAllFacilities() {
     return db("facilities").select("*");
   }
 
-  static async addFacility(facilities: facility, id: number) {
+  static async addFacility(facilities: TFacility, id: number) {
     try {
       const result = await db("facilties")
         .returning("*")

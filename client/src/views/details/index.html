@@ -51,7 +51,7 @@
 			</div>
 
 			<div class="detail-main__right">
-				<form action="" class="form">
+				<form class="form" id="user-review">
 					<div class="form__header">
 						<div class="form__header--title">
 							<h3>Add Review</h3>
@@ -78,7 +78,7 @@
 					<div class="form__estimate">
 						<div class="form__estimate--title">
 							<p>Social Estimation:</p>
-							<p id="estimate-value">$239.000*</p>
+							<p id="estimate-value">$5000*</p>
 						</div>
 						<input
 							type="range"
@@ -86,6 +86,7 @@
 							id="estimate"
 							min="2000"
 							max="1000000"
+							value="5000"
 							placeholder="Estimate"
 						/>
 					</div>
@@ -96,19 +97,20 @@
 							cols="30"
 							rows="10"
 							placeholder="Review"
+							required
 						></textarea>
 					</div>
 					<div class="form__options">
 						<div class="form__options--item">
-							<input type="checkbox" id="anomymous" />
-							<label for="anomymous">Anonymous</label>
+							<input type="checkbox" id="anonymous" name="anonymous" />
+							<label for="anonymous">Anonymous</label>
 						</div>
 						<div class="form__options--item">
-							<input type="checkbox" id="owner" />
+							<input type="checkbox" id="owner" name="owner" />
 							<label for="owner">I'm the owner of the property.</label>
 						</div>
 					</div>
-					<p class="error"></p>
+					<p class="error" id="error"></p>
 					<div class="form__submit">
 						<button type="submit" class="btn btn--primary">Add review</button>
 					</div>

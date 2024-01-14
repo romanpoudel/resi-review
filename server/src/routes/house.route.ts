@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { writeReview } from "../controllers/review.controller";
+import { houseDetail } from "../controllers/house.controller";
 import { upload } from "../middlewares/multer.middleware";
 
 const router = Router();
@@ -16,7 +16,7 @@ router.post(
       maxCount: 1,
     },
   ]),
-  writeReview
+  houseDetail
 );
 
 export default router;

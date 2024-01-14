@@ -1,6 +1,6 @@
 import { Knex } from "knex";
 
-const TABLE_NAME = "facilties";
+const TABLE_NAME = "reviews";
 
 
 /**
@@ -13,14 +13,14 @@ export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable(TABLE_NAME, (table) => {
     table.increments("id").primary();
     table.integer("house_id").unsigned().references("id").inTable("houses").onDelete("CASCADE").notNullable();
-    table.boolean("alltime_water").defaultTo(false);
-    table.boolean("sunlight").defaultTo(false);
-    table.boolean("separate_washroom").defaultTo(false);
-    table.boolean("wifi").defaultTo(false);
-    table.boolean("furniture").defaultTo(false);
-    table.boolean("security").defaultTo(false);
-    table.boolean("alltime_access").defaultTo(false);
-    table.boolean("parking").defaultTo(false);
+    table.integer("user_id").unsigned().references("id").inTable("users").onDelete("CASCADE").notNullable();
+    table.boolean("anonymous").notNullable().defaultTo(false);
+    table.string("price").nullable();
+    table.string("rating").nullable().defaultTo("0");
+    table.string("review").notNullable();
+    table.boolean("owner").notNullable().defaultTo(false);
+    table.integer("likes").notNullable().defaultTo(0);
+    table.timestamps(true, true);
   });
 }
 

@@ -6,7 +6,7 @@ import logger from "../logger";
 import { ApiError } from "../utils/ApiError";
 import db from "../db";
 
-export const writeReview = async (data: THouse) => {
+export const houseDetail = async (data: THouse) => {
   const houseData = {
     housenumber: data.housenumber,
     houseimage: data.houseimage,

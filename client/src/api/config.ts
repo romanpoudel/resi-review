@@ -22,11 +22,9 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
 	async (response) => {
-		console.log("oj");
 		return response;
 	},
 	async (err) => {
-		console.log("7");
 		const originalRequest = err.config;
 		if (
 			err.response.status === 500 &&
