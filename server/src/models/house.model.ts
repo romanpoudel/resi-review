@@ -56,4 +56,16 @@ export default class HouseModel {
       .groupBy("houses.id")
       .whereILike("houses.location", `%${location}%`);
   }
+
+  static async getHouseAccordingToCategory(category:string){
+    return db("houses")
+      .join("reviews", "houses.id", "=", "reviews.house_id")
+      .select("houses.*")
+      .avg({ rating: "reviews.rating" })
+      .avg({ price: "reviews.price" })
+      .count({ total_reviews: "reviews.rating" })
+      .groupBy("houses.id")
+      .whereILike("houses.category", category);
+
+  }
 }

@@ -107,3 +107,16 @@ export const getReviewsOfHouse = async (id:number) => {
     );
   }
 };
+
+export const getHouseAccordingToCategory= async (category:string)=>{
+  try {
+    const houses = await HouseModel.getHouseAccordingToCategory(category);
+    return houses;
+  } catch (err) {
+    logger.error(err);
+    throw new ApiError(
+      400,
+      "Database error. Error in getting houses according to category."
+    );
+  }
+};
