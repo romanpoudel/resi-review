@@ -28,7 +28,7 @@ radios.forEach((radio) => {
 
 form.addEventListener("submit", async (e)=> {
 	e.preventDefault();
-	checkAuth();
+	await checkAuth();
 	const error = document.getElementById("error") as HTMLDivElement;
 	if (!rating) {
 		error.innerHTML = "Please select a rating";
