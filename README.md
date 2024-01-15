@@ -80,3 +80,12 @@ To run this project, you will need to add the following environment variables to
 -Researching how can I make components and found the concept of web components which include shadowDOM concept. But my project has a sass which is centralized so used a basic web component without using shadowDOM as shadowDOM restricts outer styling.
 
 -Configuring eslint in backend to escape error when any declared value is not used like when `res:Response` is not used, append `_res:Response` so it doesnot show error.
+
+
+## Improvements
+
+-Lazy Loading
+
+-Pagination
+
+-More details in profile page
