@@ -64,10 +64,24 @@ export const getAllHouseWithReviews = async () => {
     logger.error(err);
     throw new ApiError(
       400,
-      "Database error. Error in getting all houseswith reviews."
+      "Database error. Error in getting all houses with reviews."
     );
   }
 };
+
+export const getAllHouseWithReviewsByLocation=async (location:string)=>{
+  try {
+    const houses = await HouseModel.getAllHouseWithReviewsByLocation(location);
+    return houses;
+  } catch (err) {
+    logger.error(err);
+    throw new ApiError(
+      400,
+      "Database error. Error in getting all houses with reviews by location."
+    );
+  }
+};
+
 export const getHouseDetail = async (id:number) => {
   try {
     const houses = await HouseModel.getHouseById(id);
