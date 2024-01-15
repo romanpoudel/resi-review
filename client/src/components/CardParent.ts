@@ -28,7 +28,7 @@ class CardParent extends HTMLElement {
       <div class="reviews__bottom">
         ${this.#datas.map((data: TCard) => {
 		return `
-            <card-component id="${data.id}" houseno="${data.housenumber}" star="${Math.trunc(Number(data.rating))}" review="${data.totalReviews}" image="${data.houseimage}" price="${Math.trunc(Number(data.price))}" location="${data.location}"></card-component>
+            <card-component id="${data.id}" houseno="${data.housenumber}" star="${Math.trunc(Number(data.rating))}" review="${data.totalReviews}" image="${data.houseimage}" price="${Math.trunc(Number(data.price))}" location="${data.location.charAt(0).toUpperCase()+data.location.slice(1)}"></card-component>
           `;
 	}).join("")}
       </div>

@@ -36,7 +36,6 @@ const reviewParent=document.querySelector("review-parent-component") as HTMLElem
 //get reviews of selected house
 try {
 	const response = await api.get(`/house/reviews/${urlQuery.get("id")}`);
-	console.log("reviews",response.data.data);
 	reviewParent.setAttribute("datas",JSON.stringify(response.data.data));
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } catch (err: any) {
@@ -98,5 +97,28 @@ form.addEventListener("submit", async (e) => {
 		const error = document.getElementById("error") as HTMLDivElement;
 		error.innerText = err.response.data.message;
 		error.classList.add("error");
+	}
+});
+
+
+const parentComponent = document.querySelector(
+	"card-parent-component"
+) as HTMLElement;
+
+//listening to input data
+const searchComponent = document.querySelector(
+	"search-component"
+) as HTMLElement;
+searchComponent?.addEventListener("searchInput", async (event: Event) => {
+	const customEvent = event as CustomEvent<string>;
+	console.log(customEvent.detail);
+	try {
+		const response = await api.get(
+			`/house/all-house-reviews?location=${customEvent.detail}`
+		);
+		parentComponent.setAttribute("datas", JSON.stringify(response.data.data));
+		console.log(response);
+	} catch (err) {
+		console.log(err);
 	}
 });

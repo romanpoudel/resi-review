@@ -11,7 +11,7 @@ export const addHouseDetail = async (data: THouse) => {
   const houseData = {
     housenumber: data.housenumber,
     houseimage: data.houseimage,
-    location: data.location,
+    location: data.location.toLocaleLowerCase(),
     locationimage: data.locationimage,
     price: data.price,
     category: data.category,

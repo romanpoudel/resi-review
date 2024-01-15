@@ -13,10 +13,11 @@ class Search extends HTMLElement {
 				<i class="bi bi-search search-section__search"></i>
 		</div>
   `;
+		this.querySelector("#search")?.addEventListener("input", this.handleInput);
 	}
 	handleInput = (event: Event) => {
-		const inputValue = (event.target as HTMLInputElement).value;
-		console.log(inputValue);
+		const inputValue = (event.target as HTMLInputElement).value.toLocaleLowerCase();
+		this.dispatchEvent(new CustomEvent("searchInput", { detail: inputValue }));
 	};
 }
 

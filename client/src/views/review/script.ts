@@ -107,7 +107,6 @@ form.addEventListener("submit", async (e) => {
 
 	try {
 		const response = await api(requestOptions);
-		console.log(response);
 		if (response.status === 201) {
 			window.location.href = "/";
 			console.log(response.data.data);

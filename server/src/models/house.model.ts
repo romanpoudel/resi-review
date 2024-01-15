@@ -54,6 +54,6 @@ export default class HouseModel {
       .avg({ price: "reviews.price" })
       .count({ total_reviews: "reviews.rating" })
       .groupBy("houses.id")
-      .where("houses.location", location);
+      .whereILike("houses.location", `%${location}%`);
   }
 }

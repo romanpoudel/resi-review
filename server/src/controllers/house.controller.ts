@@ -54,7 +54,6 @@ export const getAllHouseWithReviews = asyncHandler(
   async (req: Request, res: Response) => {
     const { location } = req.query;
     if (location) {
-      console.log("location", location);
       const houses = await reviewService.getAllHouseWithReviewsByLocation(
         location as string
       );

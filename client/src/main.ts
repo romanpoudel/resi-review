@@ -11,7 +11,9 @@ const requestOptions = {
 };
 
 const avatar = document.querySelector("avatar-component") as HTMLElement;
-const parentComponent = document.querySelector("card-parent-component") as HTMLElement;
+const parentComponent = document.querySelector(
+	"card-parent-component"
+) as HTMLElement;
 
 avatar.addEventListener("click", () => {
 	window.location.href = "/src/views/profile/index.html";
@@ -33,9 +35,26 @@ try {
 //get data for card from backend
 try {
 	const response = await api.get("/house/all-house-reviews");
-	console.log(response.data.data);
-	parentComponent.setAttribute("datas",JSON.stringify(response.data.data));
+	parentComponent.setAttribute("datas", JSON.stringify(response.data.data));
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 } catch (err: any) {
 	console.log(err.response.data.message);
 }
+
+//listening to input data
+const searchComponent = document.querySelector(
+	"search-component"
+) as HTMLElement;
+searchComponent?.addEventListener("searchInput", async (event: Event) => {
+	const customEvent = event as CustomEvent<string>;
+	console.log(customEvent.detail);
+	try {
+		const response = await api.get(
+			`/house/all-house-reviews?location=${customEvent.detail}`
+		);
+		parentComponent.setAttribute("datas", JSON.stringify(response.data.data));
+		console.log(response);
+	} catch (err) {
+		console.log(err);
+	}
+});
