@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addHouseDetail,getAllHouseWithReviews, getHouseDetail } from "../controllers/house.controller";
+import { addHouseDetail,getAllHouseWithReviews, getHouseDetail, getReviewsOfHouse } from "../controllers/house.controller";
 import { upload } from "../middlewares/multer.middleware";
 import { verifyJWT } from "../middlewares/auth.middleware";
 
@@ -23,5 +23,7 @@ router.post(
 router.get("/all-house-reviews", getAllHouseWithReviews);
 
 router.get("/house-detail/:id", getHouseDetail);
+
+router.get("/reviews/:id",getReviewsOfHouse);
 
 export default router;

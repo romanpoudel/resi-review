@@ -62,3 +62,11 @@ export const getHouseDetail = asyncHandler(
     res.status(200).json(new ApiResponse(200, house, "House details"));
   }
 );
+
+export const getReviewsOfHouse = asyncHandler(
+  async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const reviews = await reviewService.getReviewsOfHouse(Number(id));
+    res.status(200).json(new ApiResponse(200, reviews, "Reviews of house"));
+  }
+);

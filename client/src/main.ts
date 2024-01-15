@@ -10,19 +10,16 @@ const requestOptions = {
 	url: "/users/me",
 };
 
-//user profile picture
-const src =
-	"https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=740&t=st=1705308724~exp=1705309324~hmac=ac7aafaafc00d05d849fdfa70311d0ed9547c6bba58414cda9ca3de7f3e9135a";
 const avatar = document.querySelector("avatar-component") as HTMLElement;
 const parentComponent = document.querySelector("card-parent-component") as HTMLElement;
+
+avatar.addEventListener("click", () => {
+	window.location.href = "/src/views/profile/index.html";
+});
 
 try {
 	const response = await api(requestOptions);
 	if (response.status === 200) {
-		response.data.data.imageUrl
-			? avatar.setAttribute("src", response.data.data.imageUrl)
-			: avatar.setAttribute("src", src);
-
 		header_right.style.display = "none";
 		header_loggedin.style.display = "flex";
 		avatar.setAttribute("title", response.data.data.username);

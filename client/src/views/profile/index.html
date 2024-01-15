@@ -9,7 +9,9 @@
 	</head>
 	<body>
 		<header class="container header">
-			<logo-component></logo-component>
+			<a href="/" title="Go to Home">
+				<logo-component></logo-component>
+			</a>
 			<div class="header__loggedin">
 				<div>
 					<avatar-component></avatar-component>
@@ -17,10 +19,13 @@
 			</div>
 		</header>
 		<main class="container">
-			
+			<div class="logout-conteiner">
+				<button type="button" id="logout-btn" class="btn btn--primary">Logout</button>
+			</div>
 		</main>
 		<footer-component></footer-component>
 		<script type="module" defer src="./script.ts"></script>
+		<script type="module" defer src="../../utils/setAvatar.ts"></script>
 		<script type="module" defer src="../../components/Footer.ts"></script>
 		<script type="module" defer src="../../components/Logo.ts"></script>
 		<script type="module" defer src="../../components/Avatar.ts"></script>

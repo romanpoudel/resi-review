@@ -20,4 +20,17 @@ export default class ReviewModel {
       );
     }
   }
+
+  static async getReviewByHouseId(id:number) {
+    try {
+      const result = await db("reviews").where({ house_id:id });
+      return result;
+    } catch (err) {
+      console.log(err);
+      throw new ApiError(
+        400,
+        "Database error. Error getting review by id. Please check your input and try again"
+      );
+    }
+  }
 }

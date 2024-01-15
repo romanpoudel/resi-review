@@ -5,6 +5,7 @@ import GuidelineModel from "../models/guideline.model";
 import logger from "../logger";
 import { ApiError } from "../utils/ApiError";
 import db from "../db";
+import ReviewModel from "../models/reviews.model";
 
 export const addHouseDetail = async (data: THouse) => {
   const houseData = {
@@ -76,6 +77,19 @@ export const getHouseDetail = async (id:number) => {
     throw new ApiError(
       400,
       "Database error. Error in getting house with id."
+    );
+  }
+};
+
+export const getReviewsOfHouse = async (id:number) => {
+  try {
+    const reviews = await ReviewModel.getReviewByHouseId(id);
+    return reviews;
+  } catch (err) {
+    logger.error(err);
+    throw new ApiError(
+      400,
+      "Database error. Error in getting reviews of house."
     );
   }
 };
