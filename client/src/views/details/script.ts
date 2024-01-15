@@ -1,16 +1,42 @@
 import { checkAuth } from "../../utils/auth.ts";
-import api  from "../../api/config.ts";
+import api from "../../api/config.ts";
 import { showToast } from "../../utils/toast.ts";
 
+const urlQuery = new URLSearchParams(window.location.search);
+const title = document.getElementById("house-title") as HTMLInputElement;
+const houseImage = document.getElementById("house-image") as HTMLImageElement;
+const locationImage = document.getElementById(
+	"location-image"
+) as HTMLImageElement;
+const ratingComponent = document.querySelector(
+	"rating-component"
+) as HTMLImageElement;
+
+//get data from server of selected house
+try {
+	const response = await api.get(`/house/house-detail/${urlQuery.get("id")}`);
+	console.log(response);
+	title.textContent = response.data.housenumber;
+	const { rating, totalReviews, price ,houseimage,locationimage} = response.data.data;
+	const star=Math.trunc(rating);
+	const review=Math.trunc(totalReviews);
+	const avgPrice=Math.trunc(price);
+	houseImage.setAttribute("src", houseimage);
+	locationImage.setAttribute("src", locationimage);
+	ratingComponent.setAttribute("star", star.toString());
+	ratingComponent.setAttribute("price",	avgPrice.toString());
+	ratingComponent.setAttribute("review", review.toString());
+	//set data to html
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+} catch (err) {
+	console.log(err);
+}
 
 const value = document.getElementById("estimate-value") as HTMLSpanElement;
 const slider = document.getElementById("estimate") as HTMLInputElement;
 
-//price is not required to send as it automatically goes when form is submitted
-// let price;
 slider.addEventListener("input", function () {
 	value.textContent = "$" + this.value + "*";
-	// price = parseInt(this.value);
 });
 
 //user review form
@@ -26,7 +52,7 @@ radios.forEach((radio) => {
 	});
 });
 
-form.addEventListener("submit", async (e)=> {
+form.addEventListener("submit", async (e) => {
 	e.preventDefault();
 	await checkAuth();
 	const error = document.getElementById("error") as HTMLDivElement;
@@ -39,18 +65,16 @@ form.addEventListener("submit", async (e)=> {
 	const formData = new FormData(form);
 	formData.append("rating", rating.toString());
 	const data = Object.fromEntries(formData.entries());
-	const urlQuery = new URLSearchParams(window.location.search);
 
 	//pass data to server
 	const requestOptions = {
 		method: "POST",
 		url: "/users/house-review",
-		data:{
+		data: {
 			...data,
-			house_id: urlQuery.get("id")
+			house_id: urlQuery.get("id"),
 		},
 	};
-
 	try {
 		const response = await api(requestOptions);
 		console.log(response);

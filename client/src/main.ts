@@ -35,7 +35,7 @@ try {
 
 //get data for card from backend
 try {
-	const response = await api.get("/all-house-reviews");
+	const response = await api.get("/house/all-house-reviews");
 	console.log(response.data.data);
 	parentComponent.setAttribute("datas",JSON.stringify(response.data.data));
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
