@@ -1,7 +1,22 @@
-.logout-conteiner {
+@use "../abstracts" as a;
+
+.logout-container {
 	width: 100%;
 	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include a.flex(column, center);
+	padding-top: a.rem(100);
+	gap: a.rem(20);
+	form{
+		@include a.flex(column, center, center);
+		gap: a.rem(10);
+	}
+	input{
+		padding-bottom: a.rem(30);
+		height: a.rem(40);
+		width: 100%;
+	}
+	button{
+		width: a.rem(200);
+		height: a.rem(40);
+	}
 }

@@ -7,12 +7,17 @@ class Search extends HTMLElement {
 				<input
 					type="text"
 					class="search-section__input"
+					id="search"
 					placeholder="Enter a city..."
 				/>
 				<i class="bi bi-search search-section__search"></i>
 		</div>
   `;
 	}
+	handleInput = (event: Event) => {
+		const inputValue = (event.target as HTMLInputElement).value;
+		console.log(inputValue);
+	};
 }
 
 customElements.define("search-component", Search);

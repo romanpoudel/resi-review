@@ -2,6 +2,7 @@ import { checkAuth } from "../../utils/auth.ts";
 import api from "../../api/config.ts";
 import { showToast } from "../../utils/toast.ts";
 
+
 const urlQuery = new URLSearchParams(window.location.search);
 const title = document.getElementById("house-title") as HTMLInputElement;
 const houseImage = document.getElementById("house-image") as HTMLImageElement;

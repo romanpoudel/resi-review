@@ -45,4 +45,8 @@ export default class UserModel {
   static async clearRefreshToken(username: string) {
     return db("users").where({ username }).update({ refreshToken: null });
   }
+
+  static async uploadProfileImage(filename: string, id: number) {
+    return db("users").where({ id }).update({ image_url: filename });
+  }
 }
