@@ -2,7 +2,6 @@ import { checkAuth } from "../../utils/auth.ts";
 import api from "../../api/config.ts";
 import { showToast } from "../../utils/toast.ts";
 
-
 const urlQuery = new URLSearchParams(window.location.search);
 const title = document.getElementById("house-title") as HTMLInputElement;
 const houseImage = document.getElementById("house-image") as HTMLImageElement;
@@ -32,12 +31,14 @@ try {
 	console.log(err);
 }
 
-const reviewParent=document.querySelector("review-parent-component") as HTMLElement;
+const reviewParent = document.querySelector(
+	"review-parent-component"
+) as HTMLElement;
 //get reviews of selected house
 try {
 	const response = await api.get(`/house/reviews/${urlQuery.get("id")}`);
-	reviewParent.setAttribute("datas",JSON.stringify(response.data.data));
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	reviewParent.setAttribute("datas", JSON.stringify(response.data.data));
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 } catch (err: any) {
 	console.log(err.response.data.message);
 }
@@ -100,7 +101,6 @@ form.addEventListener("submit", async (e) => {
 	}
 });
 
-
 const parentComponent = document.querySelector(
 	"card-parent-component"
 ) as HTMLElement;
@@ -122,3 +122,17 @@ searchComponent?.addEventListener("searchInput", async (event: Event) => {
 		console.log(err);
 	}
 });
+
+const guidelineComponent = document.querySelector(
+	"guideline-component"
+) as HTMLElement;
+
+try {
+	const response = await api({
+		method: "GET",
+		url: `/guidelines?house_id=${Number(urlQuery.get("id"))}`,
+	});
+	guidelineComponent.setAttribute("datas", JSON.stringify(response.data.data));
+} catch (err) {
+	console.log(err);
+}

@@ -16,4 +16,17 @@ export default class GuidelineModel {
     }
   }
 
+  static async getGuidlines(id:number) {
+    try {
+      const result = await db("guidlines").select("*").where({house_id:id});
+      return result;
+    } catch (err) {
+      logger.error(err);
+      throw new ApiError(
+        400,
+        "Database error. Error getting guidlines. Please check your input and try again"
+      );
+    }
+  }
+
 }

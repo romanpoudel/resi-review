@@ -26,6 +26,6 @@ router.get("/house-detail/:id", getHouseDetail);
 
 router.get("/reviews/:id",getReviewsOfHouse);
 
-router.get("/filter",getHouseAccordingToCategory);
+router.get("/filter/:house_id",getHouseAccordingToCategory);
 
 export default router;

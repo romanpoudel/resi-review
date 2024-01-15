@@ -26,11 +26,11 @@ class CardParent extends HTMLElement {
 	render() {
 		this.innerHTML = `
       <div class="reviews__bottom">
-        ${this.#datas.map((data: TCard) => {
+        ${this.#datas.length>0?this.#datas.map((data: TCard) => {
 		return `
             <card-component id="${data.id}" houseno="${data.housenumber}" star="${Math.trunc(Number(data.rating))}" review="${data.totalReviews}" image="${data.houseimage}" price="${Math.trunc(Number(data.price))}" location="${data.location.charAt(0).toUpperCase()+data.location.slice(1)}"></card-component>
           `;
-	}).join("")}
+	}).join(""):"<No>No houses found</p>"}
       </div>
     `;
 	}

@@ -81,7 +81,6 @@ To run this project, you will need to add the following environment variables to
 
 -Configuring eslint in backend to escape error when any declared value is not used like when `res:Response` is not used, append `_res:Response` so it doesnot show error.
 
-
 ## Improvements
 
 -Lazy Loading
