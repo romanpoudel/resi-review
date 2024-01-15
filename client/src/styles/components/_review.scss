@@ -1,11 +1,16 @@
 @use "../abstracts" as a;
 
 .review {
+	margin-bottom: a.rem(30);
 	font-size: a.$text-xs;
-	@include a.flex();
+	width: 100%;
+	@include a.flex(row, flex-start, space-between);
 	gap: a.rem(10);
 	&--left {
 		@include a.flex(column);
+	}
+	&__content{
+		padding-bottom: a.rem(10);
 	}
 	&--right {
 		@include a.flex();

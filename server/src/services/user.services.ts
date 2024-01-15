@@ -11,7 +11,7 @@ export const reviewHouse = async(data: TReview) => {
     likes: data.likes || 0,
     anonymous: data.anonymous? true : false,
     user_id: data.user_id,
-    house_id: 23,//data.house_id correct url client side,
+    house_id: parseInt(data.house_id!),
   };
   const response=await ReviewModel.addReview(review);
   return response;

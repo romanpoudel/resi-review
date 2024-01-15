@@ -15,21 +15,31 @@ const ratingComponent = document.querySelector(
 //get data from server of selected house
 try {
 	const response = await api.get(`/house/house-detail/${urlQuery.get("id")}`);
-	console.log(response);
 	title.textContent = response.data.housenumber;
-	const { rating, totalReviews, price ,houseimage,locationimage} = response.data.data;
-	const star=Math.trunc(rating);
-	const review=Math.trunc(totalReviews);
-	const avgPrice=Math.trunc(price);
+	const { rating, totalReviews, price, houseimage, locationimage } =
+		response.data.data;
+	const star = Math.trunc(rating);
+	const review = Math.trunc(totalReviews);
+	const avgPrice = Math.trunc(price);
 	houseImage.setAttribute("src", houseimage);
 	locationImage.setAttribute("src", locationimage);
 	ratingComponent.setAttribute("star", star.toString());
-	ratingComponent.setAttribute("price",	avgPrice.toString());
+	ratingComponent.setAttribute("price", avgPrice.toString());
 	ratingComponent.setAttribute("review", review.toString());
-	//set data to html
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 } catch (err) {
 	console.log(err);
+}
+
+const reviewParent=document.querySelector("review-parent-component") as HTMLElement;
+//get reviews of selected house
+try {
+	const response = await api.get(`/house/reviews/${urlQuery.get("id")}`);
+	console.log("reviews",response.data.data);
+	reviewParent.setAttribute("datas",JSON.stringify(response.data.data));
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+} catch (err: any) {
+	console.log(err.response.data.message);
 }
 
 const value = document.getElementById("estimate-value") as HTMLSpanElement;

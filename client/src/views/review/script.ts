@@ -98,7 +98,7 @@ form.addEventListener("submit", async (e) => {
 
 	const requestOptions = {
 		method: "POST",
-		url: "/create-review",
+		url: "/house/create-review",
 		data: formData,
 		headers: {
 			"Content-Type": "multipart/form-data",

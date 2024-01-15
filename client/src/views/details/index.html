@@ -24,25 +24,16 @@
 				<div class="house">
 					<h2 class="house__title" id="house-title"></h2>
 					<figure class="house__image">
-						<img
-							id="house-image"
-							alt="house image"
-						/>
+						<img id="house-image" alt="house image" />
 					</figure>
 					<div class="house__detail">
 						<h3>Review</h3>
 						<div class="card__desc--rating">
-							<rating-component
-							></rating-component>
+							<rating-component></rating-component>
 						</div>
 					</div>
 					<div class="review-container">
-						<review-component></review-component>
-						<review-component></review-component>
-						<review-component></review-component>
-						<review-component></review-component>
-						<review-component></review-component>
-						<review-component></review-component>
+						<review-parent-component></review-parent-component>
 					</div>
 				</div>
 			</div>
@@ -116,24 +107,17 @@
 				<div class="map">
 					<h4>See house on map</h4>
 					<figure>
-						<img
-							alt="map image"
-							id="location-image"
-						/>
+						<img alt="map image" id="location-image" />
 					</figure>
 				</div>
 				<div class="review-container--small">
-					<review-component></review-component>
-					<review-component></review-component>
-					<review-component></review-component>
-					<review-component></review-component>
-					<review-component></review-component>
-					<review-component></review-component>
+					<review-parent-component></review-parent-component>
 				</div>
 			</div>
 		</main>
 		<footer-component></footer-component>
 		<script type="module" defer src="./script.ts"></script>
+		<script type="module" defer src="../../components/ReviewParent.ts"></script>
 		<script type="module" defer src="../../components/Logo.ts"></script>
 		<script type="module" defer src="../../components/Search.ts"></script>
 		<script type="module" defer src="../../components/Rating.ts"></script>

@@ -2,13 +2,12 @@ import db from "../db";
 import { TReviewDB } from "../types/review";
 import { ApiError } from "../utils/ApiError";
 
-
 export default class ReviewModel {
   static async getAllReviews() {
     return db("reviews").select("*");
   }
 
-  static async addReview(review:TReviewDB) {
+  static async addReview(review: TReviewDB) {
     try {
       const result = await db("reviews").insert(review).returning("*");
       return result;
@@ -21,9 +20,12 @@ export default class ReviewModel {
     }
   }
 
-  static async getReviewByHouseId(id:number) {
+  static async getReviewByHouseId(id: number) {
     try {
-      const result = await db("reviews").where({ house_id:id });
+      const result = await db("reviews")
+        .join("users", "reviews.user_id", "=", "users.id")
+        .where({ "reviews.house_id": id })
+        .select("reviews.*", "users.username");
       return result;
     } catch (err) {
       console.log(err);
