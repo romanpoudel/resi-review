@@ -7,7 +7,7 @@ import * as reviewService from "../services/house.services";
 import { ApiResponse } from "../utils/ApiResponse";
 import HouseModel from "../models/house.model";
 
-export const houseDetail = asyncHandler(async (req: Request, res: Response) => {
+export const addHouseDetail = asyncHandler(async (req: Request, res: Response) => {
   const houseimageLocalpath = await (
     req.files as { [fieldname: string]: Express.Multer.File[] }
   ).houseimage?.[0]?.path;
@@ -42,7 +42,7 @@ export const houseDetail = asyncHandler(async (req: Request, res: Response) => {
     houseimage: houseimageResponse?.url,
     locationimage: locationimageResponse?.url,
   };
-  await reviewService.houseDetail(housedata);
+  await reviewService.addHouseDetail(housedata);
   res.status(201).json(new ApiResponse(201, null, "Review added successfully"));
 });
 
@@ -52,5 +52,13 @@ export const getAllHouseWithReviews = asyncHandler(
     res
       .status(200)
       .json(new ApiResponse(200, houses, "All houses with reviews"));
+  }
+);
+
+export const getHouseDetail = asyncHandler(
+  async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const house = await reviewService.getHouseDetail(Number(id));
+    res.status(200).json(new ApiResponse(200, house, "House details"));
   }
 );

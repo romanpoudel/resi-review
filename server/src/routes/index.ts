@@ -11,7 +11,7 @@ router.use("/auth", authRoutes);
 
 router.use("/users", verifyJWT, userRoutes);
 
-router.use("/", createRoutes);
+router.use("/house", createRoutes);
 
 
 export default router;

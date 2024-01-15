@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { houseDetail,getAllHouseWithReviews } from "../controllers/house.controller";
+import { addHouseDetail,getAllHouseWithReviews, getHouseDetail } from "../controllers/house.controller";
 import { upload } from "../middlewares/multer.middleware";
 import { verifyJWT } from "../middlewares/auth.middleware";
 
@@ -17,9 +17,11 @@ router.post(
       maxCount: 1,
     },
   ]),
-  houseDetail
+  addHouseDetail
 );
 
 router.get("/all-house-reviews", getAllHouseWithReviews);
+
+router.get("/house-detail/:id", getHouseDetail);
 
 export default router;

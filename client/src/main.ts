@@ -19,7 +19,6 @@ const parentComponent = document.querySelector("card-parent-component") as HTMLE
 try {
 	const response = await api(requestOptions);
 	if (response.status === 200) {
-		console.log("user", response.data.data.imageUrl);
 		response.data.data.imageUrl
 			? avatar.setAttribute("src", response.data.data.imageUrl)
 			: avatar.setAttribute("src", src);

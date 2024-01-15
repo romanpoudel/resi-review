@@ -34,4 +34,8 @@ export default class HouseModel {
       .count({ total_reviews: "reviews.rating" })
       .groupBy("houses.id");
   }
+
+  static async getHouseById(id: number) {
+    return db("houses").where({ id }).first();
+  }
 }

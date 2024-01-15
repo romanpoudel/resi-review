@@ -6,7 +6,7 @@ import logger from "../logger";
 import { ApiError } from "../utils/ApiError";
 import db from "../db";
 
-export const houseDetail = async (data: THouse) => {
+export const addHouseDetail = async (data: THouse) => {
   const houseData = {
     housenumber: data.housenumber,
     houseimage: data.houseimage,
@@ -64,6 +64,18 @@ export const getAllHouseWithReviews = async () => {
     throw new ApiError(
       400,
       "Database error. Error in getting all houseswith reviews."
+    );
+  }
+};
+export const getHouseDetail = async (id:number) => {
+  try {
+    const houses = await HouseModel.getHouseById(id);
+    return houses;
+  } catch (err) {
+    logger.error(err);
+    throw new ApiError(
+      400,
+      "Database error. Error in getting house with id."
     );
   }
 };
