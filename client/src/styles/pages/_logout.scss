@@ -7,16 +7,22 @@
 	padding-top: a.rem(100);
 	gap: a.rem(20);
 	form{
-		@include a.flex(column, center, center);
-		gap: a.rem(10);
+		@include a.flex(column, flex-start, center);
+		gap: a.rem(20);
+		div{
+			@include a.flex(column, flex-start, center);
+			gap: a.rem(10);
+		}
 	}
 	input{
 		padding-bottom: a.rem(30);
 		height: a.rem(40);
 		width: 100%;
+		max-width: a.rem(300);
 	}
-	button{
-		width: a.rem(200);
+	#logout-btn{
+		margin-top: a.rem(200);
+		width: a.rem(150);
 		height: a.rem(40);
 	}
 }

@@ -20,11 +20,21 @@
 		</header>
 		<main class="container">
 			<div class="logout-container">
-				<form >
-					<label for="profile">Update Profile Picture</label>
-					<input type="file" id="profile" name="profile" accept="image/png, image/jpeg" />
+				<form id="profile-form">
+					<div>
+						<label for="profile-image">Update Profile Picture</label>
+						<input
+							type="file"
+							id="profile-image"
+							name="profileimage"
+							accept="image/png, image/jpeg"
+						/>
+					</div>
+					<button type="submit" class="btn btn--outline image-upload">Upload</button>
 				</form>
-				<button type="button" id="logout-btn" class="btn btn--primary">Logout</button>
+				<button type="button" id="logout-btn" class="btn btn--primary">
+					Logout
+				</button>
 			</div>
 		</main>
 		<footer-component></footer-component>
