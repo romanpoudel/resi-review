@@ -22,8 +22,6 @@ router.post(
 
 router.get("/all-house-reviews", getAllHouseWithReviews);
 
-// router.get("/all-house-reviews?location", getAllHouseWithReviews);
-
 router.get("/house-detail/:id", getHouseDetail);
 
 router.get("/reviews/:id",getReviewsOfHouse);

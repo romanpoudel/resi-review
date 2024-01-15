@@ -47,13 +47,24 @@ const searchComponent = document.querySelector(
 ) as HTMLElement;
 searchComponent?.addEventListener("searchInput", async (event: Event) => {
 	const customEvent = event as CustomEvent<string>;
-	console.log(customEvent.detail);
 	try {
 		const response = await api.get(
 			`/house/all-house-reviews?location=${customEvent.detail}`
 		);
 		parentComponent.setAttribute("datas", JSON.stringify(response.data.data));
-		console.log(response);
+	} catch (err) {
+		console.log(err);
+	}
+});
+
+//filter data by category
+const selectElement = document.getElementById("category") as HTMLSelectElement;
+selectElement.addEventListener("change", async () => {
+	try {
+		const response = await api.get(
+			`/house/filter?category=${selectElement.value}`
+		);
+		parentComponent.setAttribute("datas", JSON.stringify(response.data.data));
 	} catch (err) {
 		console.log(err);
 	}
