@@ -12,8 +12,11 @@
 	@include a.breakpoint(midsize) {
 		max-width: a.rem(350);
 	}
+	@include a.breakpoint(large) {
+		max-width: a.rem(300);
+	}
 	@include a.breakpoint(extra-large) {
-		max-width: a.rem(370);
+		max-width: a.rem(250);
 	}
 	&__image {
 		margin: 0;
@@ -34,18 +37,27 @@
 	&__desc {
 		@include a.flex(column);
 		&--title {
-			font-size: a.$text-base;
+			@include a.flex(row, center, space-between);
+			font-size: a.$text-sm;
 			font-weight: a.$font-semibold;
-			margin-top: a.rem(5);
+			padding-top: a.rem(8);
+			padding-bottom: a.rem(5);
 			color: a.$clr-gray;
 			padding-inline: a.rem(15);
 			border-bottom: a.rem(1) solid a.$clr-light-gray;
-			padding-bottom: a.rem(10);
+			h3{
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			@include a.breakpoint(medium) {
+				font-size: a.$text-base;
+			}
 		}
 		&--info {
 			@include a.flex(row, center, space-between);
 			padding-inline: a.rem(15);
-			padding-bottom: a.rem(15);
+			padding-top: a.rem(10);
+			padding-bottom: a.rem(10);
 		}
 		&--rating {
 			@include a.flex(row, center);
@@ -68,13 +80,11 @@
 		}
 		&--price {
 			font-size: a.$text-sm;
-			font-weight: a.$font-semibold;
+			font-weight: a.$font-extrabold;
 			color: a.$clr-black;
-			font-family: "Open Sans", sans-serif;
+			font-family: "Lato", sans-serif;
+			letter-spacing: a.rem(1);
 			margin-top: a.rem(5);
-			@include a.breakpoint(large) {
-				font-size: a.$text-base;
-			}
 		}
 	}
 }

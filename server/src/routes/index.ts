@@ -11,7 +11,7 @@ router.use("/auth", authRoutes);
 
 router.use("/users", verifyJWT, userRoutes);
 
-router.use("/create-review", verifyJWT, createRoutes);
+router.use("/", createRoutes);
 
 
 export default router;

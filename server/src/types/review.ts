@@ -10,8 +10,8 @@ type TReview = {
 };
 
 type TReviewDB = {
-  rating: string;
-  price: string;
+  rating: number;
+  price: number;
   review: string;
   owner?: boolean;
   likes?: number;

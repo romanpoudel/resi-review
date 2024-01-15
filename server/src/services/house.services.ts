@@ -54,3 +54,16 @@ export const houseDetail = async (data: THouse) => {
   }
   return;
 };
+
+export const getAllHouseWithReviews = async () => {
+  try {
+    const houses = await HouseModel.getAllHouseWithReviews();
+    return houses;
+  } catch (err) {
+    logger.error(err);
+    throw new ApiError(
+      400,
+      "Database error. Error in getting all houseswith reviews."
+    );
+  }
+};

@@ -1,0 +1,58 @@
+import { Knex } from 'knex';
+
+const TABLE_NAME = 'reviews';
+
+/**
+ * Delete existing entries and seed values for table TABLE_NAME.
+ *
+ * @param   {Knex} knex
+ * @returns {Promise}
+ */
+export async function seed(knex: Knex): Promise<void> {
+  return knex(TABLE_NAME)
+    .del()
+    .then(() => {
+      return knex(TABLE_NAME).insert([
+        {
+          house_id: 23,
+          user_id: 1,
+          anonymous: true,
+          price: '23412',
+          rating: '4.5',
+          review: 'sadfsadfdasgsdag',
+          owner: true,
+          likes: 50
+        },
+        {
+          house_id: 23,
+          user_id: 1,
+          anonymous: true,
+          price: '23412',
+          rating: '4.5',
+          review: 'sdavdsace',
+          owner: true,
+          likes: 50
+        },
+        {
+          house_id: 23,
+          user_id: 1,
+          anonymous: true,
+          price: '23412',
+          rating: '4.5',
+          review: 'sadgadfvd',
+          owner: true,
+          likes: 50
+        },
+        {
+          house_id: 23,
+          user_id: 1,
+          anonymous: true,
+          price: '23412',
+          rating: '4.5',
+          review: 'sdagvxcv',
+          owner: true,
+          likes: 50
+        },
+      ]);
+    });
+}

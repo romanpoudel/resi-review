@@ -8,7 +8,7 @@ class Rating extends HTMLElement {
         <span class="card__desc--rating-value">${this.getAttribute("star")}</span>
         <p class="card__desc--reviews">(${this.getAttribute("review")} Reviews)</p>
     </div>
-    <div class="card__desc--price">$${this.getAttribute("price")} USD</div>
+    <div class="card__desc--price">$${this.getAttribute("price")}</div>
   </div>
     `;
 	}

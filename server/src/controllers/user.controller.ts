@@ -4,14 +4,14 @@ import { ApiError } from "../utils/ApiError";
 import { ApiResponse } from "../utils/ApiResponse";
 import { IRequestWithUser } from "../interfaces/requestUser";
 import { reviewSchema } from "../schemas/review.schema";
-import * as reviewService from "../services/user.services";
+import * as userService from "../services/user.services";
 
 export const loggedInUser = asyncHandler(
   async (req: IRequestWithUser, res: Response) => {
     res.json(
       new ApiResponse(
         200,
-        { username: req.user?.username, email: req.user?.email },
+        req.user,
         "User logged in"
       )
     );
@@ -24,7 +24,7 @@ export const reviewHouse = asyncHandler(
     if (error) {
       throw new ApiError(400, error.message);
     }
-    const data = await reviewService.reviewHouse({
+    const data = await userService.reviewHouse({
       ...value,
       user_id: req.user?.id,
     });

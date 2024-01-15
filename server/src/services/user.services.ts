@@ -4,8 +4,8 @@ import { TReview } from "../types/review";
 export const reviewHouse = async(data: TReview) => {
 
   const review = {
-    rating: data.rating,
-    price: data.estimate,
+    rating: parseInt(data.rating),
+    price: parseInt(data.estimate),
     review: data.review,
     owner: data.owner? true : false,
     likes: data.likes || 0,

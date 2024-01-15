@@ -31,8 +31,12 @@
       gap: auto;
     }
     @include a.breakpoint(midsize) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: auto;
+    }
+    @include a.breakpoint(large) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: a.rem(20);
     }
     @include a.breakpoint(extra-large) {
       grid-template-columns: repeat(4, 1fr);

@@ -14,7 +14,7 @@ export default class FacilityModel {
         .returning("*")
         .insert({
           alltime_water: facilities.water,
-          sunlight: facilities.sunlight,
+          direct_sunlight: facilities.sunlight,
           separate_washroom: facilities.separatewashroom,
           wifi: facilities.wifi,
           furniture: facilities.furniture,
