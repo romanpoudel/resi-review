@@ -35,7 +35,6 @@ const reviewParent = document.querySelectorAll(
 	"review-parent-component"
 ) as NodeListOf<Element>;
 //get reviews of selected house
-console.log("1", reviewParent);
 try {
 	const response = await api.get(`/house/reviews/${urlQuery.get("id")}`);
 	reviewParent.forEach((element) => {
@@ -114,7 +113,6 @@ const searchComponent = document.querySelector(
 ) as HTMLElement;
 searchComponent?.addEventListener("searchInput", async (event: Event) => {
 	const customEvent = event as CustomEvent<string>;
-	console.log(customEvent.detail);
 	try {
 		const response = await api.get(
 			`/house/all-house-reviews?location=${customEvent.detail}`
@@ -135,7 +133,6 @@ try {
 		method: "GET",
 		url: `/guidelines?house_id=${Number(urlQuery.get("id"))}`,
 	});
-	console.log("object", response.data.data);
 	guidelineComponent.setAttribute("datas", JSON.stringify(response.data.data));
 } catch (err) {
 	console.log(err);
