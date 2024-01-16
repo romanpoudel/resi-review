@@ -23,10 +23,25 @@
 		padding: 0;
     overflow: hidden;
     border-radius: a.rem(8);
+		height: a.rem(200);
+		min-width: a.rem(250);
+		@include a.breakpoint(medium) {
+			min-width: a.rem(300);
+		}
+		@include a.breakpoint(midsize) {
+			min-width: a.rem(350);
+		}
+		@include a.breakpoint(large) {
+			min-width: a.rem(300);
+		}
+		@include a.breakpoint(extra-large) {
+			min-width: a.rem(250);
+		}
 		img {
-			width: 100%;
-			height: 100%;
+			width: 100%;	
+			height: a.rem(200);		
 			object-fit: cover;
+			overflow: hidden;
       border-radius: 0 0 a.rem(8) a.rem(8);
 			&:hover {
         transform: scale(1.1);

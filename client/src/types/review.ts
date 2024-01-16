@@ -7,6 +7,7 @@ type TReview = {
 	price: string;
 	rating?: string;
 	anonymous?: string;
+	owner?: boolean;
 };
 
 export type { TReview };

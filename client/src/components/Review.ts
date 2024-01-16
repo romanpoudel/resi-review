@@ -5,7 +5,7 @@ class Review extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ["author", "timestamp", "text", "likes","estimation","rating"];
+		return ["author", "timestamp", "text", "likes","estimation","rating","anonymous","owner"];
 	}
 
 	attributeChangedCallback(_name: string, oldValue: string, newValue: string) {
@@ -19,7 +19,7 @@ class Review extends HTMLElement {
       <div class="review--left">
         <div class="review__top">
           <div class="review__header">
-            <h4 class="review__author">${this.getAttribute("author")}</h4>
+          <h4 class="review__author">${this.getAttribute("author")} ${this.getAttribute("owner") === "true" ? "(owner)" : ""}</h4>
             <span class="review__bullet">&bullet;</span>
             <p class="review__timestamp">${this.getAttribute("timestamp")}</p>
           </div>

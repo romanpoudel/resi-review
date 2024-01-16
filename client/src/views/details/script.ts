@@ -31,13 +31,16 @@ try {
 	console.log(err);
 }
 
-const reviewParent = document.querySelector(
+const reviewParent = document.querySelectorAll(
 	"review-parent-component"
-) as HTMLElement;
+) as NodeListOf<Element>;
 //get reviews of selected house
+console.log("1", reviewParent);
 try {
 	const response = await api.get(`/house/reviews/${urlQuery.get("id")}`);
-	reviewParent.setAttribute("datas", JSON.stringify(response.data.data));
+	reviewParent.forEach((element) => {
+		element.setAttribute("datas", JSON.stringify(response.data.data));
+	});
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 } catch (err: any) {
 	console.log(err.response.data.message);
@@ -132,6 +135,7 @@ try {
 		method: "GET",
 		url: `/guidelines?house_id=${Number(urlQuery.get("id"))}`,
 	});
+	console.log("object", response.data.data);
 	guidelineComponent.setAttribute("datas", JSON.stringify(response.data.data));
 } catch (err) {
 	console.log(err);
