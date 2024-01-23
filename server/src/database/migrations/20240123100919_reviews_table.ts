@@ -19,7 +19,6 @@ export async function up(knex: Knex): Promise<void> {
     table.integer("rating").notNullable().defaultTo(0);
     table.string("review").notNullable();
     table.boolean("owner").notNullable().defaultTo(false);
-    table.integer("likes").notNullable().defaultTo(0);
     table.timestamps(true, true);
   });
 }

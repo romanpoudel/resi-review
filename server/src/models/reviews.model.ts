@@ -24,8 +24,11 @@ export default class ReviewModel {
     try {
       const result = await db("reviews")
         .join("users", "reviews.user_id", "=", "users.id")
+        .leftJoin("likes", "reviews.id", "=", "likes.review_id")
         .where({ "reviews.house_id": id })
-        .select("reviews.*", "users.username");
+        .select("reviews.*", "users.username")
+        .count({ likes: "likes.user_id" })
+        .groupBy("reviews.id", "users.username");
       return result;
     } catch (err) {
       console.log(err);

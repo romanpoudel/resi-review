@@ -3,7 +3,6 @@ type TReview = {
   estimate: string;
   review: string;
   owner?: string;
-  likes?: number;
   anonymous?: string;
   user_id?: number;
   house_id?: string;
@@ -14,7 +13,6 @@ type TReviewDB = {
   price: number;
   review: string;
   owner?: boolean;
-  likes?: number;
   anonymous?: boolean;
   user_id?: number;
   house_id?: number;

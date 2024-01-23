@@ -9,7 +9,6 @@ export const reviewHouse = async (data: TReview) => {
     price: parseInt(data.estimate),
     review: data.review,
     owner: data.owner ? true : false,
-    likes: data.likes || 0,
     anonymous: data.anonymous ? true : false,
     user_id: data.user_id,
     house_id: parseInt(data.house_id!),
