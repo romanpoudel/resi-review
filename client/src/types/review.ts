@@ -8,6 +8,7 @@ type TReview = {
 	rating?: string;
 	anonymous?: string;
 	owner?: boolean;
+	id?: number;
 };
 
 export type { TReview };

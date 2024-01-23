@@ -29,7 +29,7 @@ class ReviewParent extends HTMLElement {
       <div class="reviews-container">
         ${this.#datas.map((data: TReview) => {
 		return `
-            <review-component author="${data.anonymous?data.userId:data.username}" timestamp="${format(data.updatedAt)}" text="${data.review}" likes="${data.likes}" estimation="${data.price}" rating="${data.rating}" anonymous="${data.anonymous}" owner="${data.owner}"></review-component>
+            <review-component author="${data.anonymous?data.userId:data.username}" timestamp="${format(data.updatedAt)}" text="${data.review}" likes="${data.likes}" estimation="${data.price}" rating="${data.rating}" anonymous="${data.anonymous}" owner="${data.owner}" reviewId="${data.id}"></review-component>
           `;
 	}).join("")}
       </div>

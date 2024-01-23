@@ -22,4 +22,18 @@ export default class LikeModel {
       throw new ApiError(400, "Database error. Error updating like.");
     }
   }
+
+  static async checkUser(reviewId: number, userId: number) {
+    try {
+      const result = await db("likes")
+        .returning("*")
+        .where({ review_id: reviewId, user_id: userId });
+      return result;
+    } catch (err) {
+      throw new ApiError(
+        400,
+        "Database error. Error geting user in likes table"
+      );
+    }
+  }
 }

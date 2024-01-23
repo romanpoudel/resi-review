@@ -62,6 +62,9 @@
 		color: a.$clr-primary;
 		font-weight: a.$font-semibold;
 		font-size: a.$text-sm;
+		&--icon{
+			cursor: pointer;
+		}
 	}
 
 	&__bottom {

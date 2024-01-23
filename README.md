@@ -39,6 +39,10 @@ Open [http://localhost:5173](http://localhost:5173) with your browser to see the
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see if backend is running.
 
+## Make specific migration(example)
+
+```npm run make:migration reviews_table -- --stub ./stubs/migration.stub.reviews```
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file

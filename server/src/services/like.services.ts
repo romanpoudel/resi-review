@@ -1,17 +1,33 @@
 import LikeModel from "../models/like.model";
 import logger from "../logger";
 import { ApiError } from "../utils/ApiError";
+import UserModel from "../models/user.model";
 
-export const setLike = async (reviewId: number,userId:number,add:boolean) => {
+export const setLike = async (
+  reviewId: number,
+  email: string,
+  add: boolean
+) => {
   try {
-    console.log(add);
-    const result = await LikeModel.setLike(reviewId,userId,add);
+    const user = await UserModel.getByEmail(email);
+    const result = await LikeModel.setLike(reviewId, user.id, add);
     return result;
   } catch (err) {
     logger.error(err);
-    throw new ApiError(
-      400,
-      "Database error. Error getting guidlines. Please check your input and try again"
-    );
+    throw new ApiError(400, "Database error. Error setting like.");
+  }
+};
+
+export const checkUser = async (reviewId: number, email: string) => {
+  try {
+    const user = await UserModel.getByEmail(email);
+    const result = await LikeModel.checkUser(reviewId, user.id);
+    if (result.length === 0) {
+      return false;
+    }
+    return true;
+  } catch (err) {
+    logger.error(err);
+    throw new ApiError(400, "Database error. Error checking user in likes.");
   }
 };
