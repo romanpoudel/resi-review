@@ -22,7 +22,7 @@ export const addHouseDetail = async (data: THouse) => {
   let guidelines: string[] = [];
   if (data.guidelines) {
     guidelines = data.guidelines.includes(".")
-      ? data.guidelines.split(".")
+      ? data.guidelines.split(/\.(?=\S)/).map((s) => s.replace(".", ""))
       : data.guidelines.trim() !== ""
         ? [data.guidelines]
         : [];

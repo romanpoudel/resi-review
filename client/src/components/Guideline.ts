@@ -45,7 +45,7 @@ class Guideline extends HTMLElement {
             <h4 class="guideline__heading">Guidelines</h4>
             <div class="guideline__container">
               ${this.#datas
-		.map((data) => `<p class="guideline--item">${data.rule}</p>`)
+		.map((data) => `<p class="guideline--item">👉 ${data.rule}</p>`)
 		.join("")}
             </div>`
 		: ""

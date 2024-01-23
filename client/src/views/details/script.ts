@@ -135,5 +135,5 @@ try {
 	});
 	guidelineComponent.setAttribute("datas", JSON.stringify(response.data.data));
 } catch (err) {
-	console.log(err);
+	console.log(err); 
 }
