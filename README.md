@@ -35,7 +35,7 @@ clone the project with `https://github.com/romanpoudel/resi-review.git`
   npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:5173) with your browser to see the result.
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see if backend is running.
 
